@@ -6,7 +6,7 @@ const msp = (state, ownProps) => {
   const formType = ownProps.location.pathname.slice(1)
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.session.errors,
+    errors: state.errors,
     formType
   }
 };

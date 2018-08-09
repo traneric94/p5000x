@@ -11,6 +11,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  background: rgb(247, 248, 250);
 }
 
 /* Sections
@@ -252,6 +253,11 @@ progress {
 
 textarea {
   overflow: auto;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 0;
 }
 
 /**

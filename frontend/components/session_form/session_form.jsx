@@ -38,11 +38,11 @@ class SessionForm extends React.Component {
     }
   }
 
-  errors() {
-    if (this.props.errors) {
+  renderErrors() {
+    if (this.props.errors.sessionErrors) {
       return (
-        <ul>
-          {this.props.errors.map((err, idx) => (
+        <ul className="error-list">
+          {this.props.errors.sessionErrors.map((err, idx) => (
             <li key={idx}>{ err }</li>
           ))}
         </ul>
@@ -54,14 +54,13 @@ class SessionForm extends React.Component {
     return (
       <div className="session-container">
         <br/>
-          <br/>
-        <br/>
         <form className ="session-form" onSubmit={this.handleSubmit}>
           {this.toggleSignInSignUp()}
-          {this.errors()}
+          <div id="status" >{this.status}</div>
+          {this.renderErrors()}
           <div className="session-inputs">
             <label>
-              Username:
+              Username
               <br/>
               <input
                 type="text"
@@ -71,7 +70,7 @@ class SessionForm extends React.Component {
             </label>
             <label>
               <br/>
-              Password:
+              Password
               <br/>
               <input
                 type="password"
@@ -81,8 +80,8 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
           </div>
+          <input className="newUser" id="mainLogin" type="submit" value={this.buttonStatus} />
         </form>
       </div>
     );
