@@ -1,0 +1,17 @@
+.session-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.session-form {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  width: 40%;
+  position: absolute;
+  top: 35vw;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
