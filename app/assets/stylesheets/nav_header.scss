@@ -10,14 +10,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 50px;
+  height: 35px;
 }
 
 
 .login-signup {
   font-size: 14px;
   float: right;
-  background: transparent;
   font-family: $main-font;
   height: 40px;
 }
@@ -29,6 +28,7 @@
   text-align: center;
   display: inline-block;
   text-decoration: none;
+  height: 15px;
 }
 
 .newUser:hover {
@@ -70,12 +70,20 @@
 }
 
 #logo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 25%;
-  margin-top: 3.5px;
+  margin-top: 1.5px;
 }
 
 #logout {
   font-size: 14px;
+}
+
+#second-button {
+  background: #fff;
+  color: black;
+  &:hover {
+    color: rgb(28,151, 227)
+  }
 }

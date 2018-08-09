@@ -18,7 +18,7 @@ const newSessionLinks = (currentUser, ownProps) => {
   } else if (path === "" && !currentUser) {
     return (
       <nav className="login-signup">
-        <Link className="newUser" to="/login">Login</Link>
+        <Link className="newUser" id="second-button" to="/login">Login</Link>
         <Link className="newUser" to="/signup">Sign Up</Link>
     </nav>
   )

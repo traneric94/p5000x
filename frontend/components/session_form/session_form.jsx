@@ -18,6 +18,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state
@@ -80,8 +84,8 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
+            <input className="newUser" id="mainLogin" type="submit" value={this.buttonStatus} />
           </div>
-          <input className="newUser" id="mainLogin" type="submit" value={this.buttonStatus} />
         </form>
       </div>
     );

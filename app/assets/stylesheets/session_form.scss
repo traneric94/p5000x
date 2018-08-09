@@ -21,21 +21,31 @@
   font-style: inherit;
 }
 
-.session-inputs label {
+
+.session-inputs {
   display: inline;
   font-style: inherit;
   font-size: 14px;
   color: #71767a;
   margin-bottom: 10px;
+  width: 100%;
+  label {
+    width: 100%
+  }
 }
 
 .session-input {
-  width: 80%;
+  width: 93%;
   margin: 6px 0px 17px 0px;
   font-size: 14px;
   padding: 8px 10px;
   color: #525558;
   border: 1px solid rgba(185, 193, 199, 0.5);
+}
+
+.error-list {
+  list-style-type: none;
+  color: red;
 }
 
 #status {
@@ -45,11 +55,7 @@
 }
 
 #mainLogin {
-  width: auto;
-  text-align: center
-}
-
-.error-list {
-  list-style-type: none;
-  color: red;
+  width: 100%;
+  text-align: center;
+  height: auto;
 }
