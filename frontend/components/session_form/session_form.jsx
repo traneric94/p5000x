@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.status = ""
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginWithDemo = this.loginWithDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,7 +26,16 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state
+    console.log(user);
     this.props.processForm(user);
+  }
+
+  loginWithDemo(event) {
+    event.preventDefault();
+    this.props.demoLogin({
+      username: "testing",
+      password: "testing"
+    })
   }
 
   update(field) {
@@ -34,11 +44,11 @@ class SessionForm extends React.Component {
 
   toggleSignInSignUp() {
     if (this.props.formType === "login") {
-      this.status = "Log In to p5000x"
-      this.buttonStatus = "Log In"
+      this.status = "Log In to p5000x";
+      this.buttonStatus = "Log In";
     } else {
-      this.status = "Join p5000x"
-      this.buttonStatus = "Sign Up"
+      this.status = "Join p5000x";
+      this.buttonStatus = "Sign Up";
     }
   }
 
@@ -84,7 +94,14 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="newUser" id="mainLogin" type="submit" value={this.buttonStatus} />
+            <input
+              className="newUser mainButton"
+              type="submit"
+              value={this.buttonStatus}
+            />
+            <button
+              onClick={this.loginWithDemo}
+              className="newUser mainButton"> DEMO LOGIN </button>
           </div>
         </form>
       </div>

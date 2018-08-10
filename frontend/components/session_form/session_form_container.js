@@ -16,7 +16,8 @@ const mdp = (dispatch, ownProps)  => {
   const processForm = (formType === 'login') ? logIn : signUp;
   return {
     processForm: user => dispatch(processForm(user)),
-    clearErrors: () => dispatch(receiveErrors([]))
+    clearErrors: () => dispatch(receiveErrors([])),
+    demoLogin: user => dispatch(logIn(user))
   };
 };
 

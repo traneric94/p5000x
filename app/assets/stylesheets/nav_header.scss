@@ -50,34 +50,40 @@
 .nav-header-dropdown li button {
   width: 100%;
   text-align: center;
-
+  border: 0px;
+  text-align: left;
+  color: rgb(81, 85, 88);
 }
 
 .dropdown:hover .nav-header-dropdown {
   display: block;
   position: absolute;
   right: 1px;
+  padding: 0px;
 
 }
 
 
 .profile-pic {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  margin-top: 10px;
+  margin-top: 5px;
   display: inline;
 }
 
 #logo {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 25%;
-  margin-top: 1.5px;
+  margin-top: 5px;
 }
 
 #logout {
   font-size: 14px;
+  border-top: 0.5px solid;
+  border-top-color: gray
+
 }
 
 #second-button {
