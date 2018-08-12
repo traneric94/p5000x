@@ -22,7 +22,7 @@ export const receiveErrors = errors => ({
 export const photoIndex = () => dispatch => (
   PhotoAPIUtil.getPhotos().then(
     photos => (
-      dispatch(receivePhotos())
+      dispatch(receivePhotos(photos))
     ),
     err => (
       dispatch(receiveErrors(err.response.JSON))
@@ -30,13 +30,25 @@ export const photoIndex = () => dispatch => (
   )
 );
 
-export const photoShow = (id) => dispatch => (
+export const getPhoto = (id) => dispatch => (
   PhotoAPIUtil.getPhoto(id).then(
     photo => (
-      dispatch(receivePhoto())
+      dispatch(receivePhoto(photo))
     ),
     err => (
       dispatch(receiveErrors(err.response.JSON))
     )
   )
 );
+
+export const updatePhoto = (photo) => dispatch => (
+  PhotoAPIUtil.updatePhoto(photo).then(
+    photo => dispatch(receivePhoto(photo))
+  )
+);
+
+export const deletePhoto = (id) => dispatch => (
+  PhotoAPIUtil.deletePhoto(id).then(
+    photo => dispatch(receivePhoto)
+  )
+)

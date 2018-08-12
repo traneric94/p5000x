@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
-const _nullUser = {
+const templateUser = {
   username: "",
   image_url: "",
   photos: [],
@@ -9,7 +9,7 @@ const _nullUser = {
   likes: []
 };
 
-const usersReducer = (state = {}, action) => {
+const usersReducer = (state = templateUser, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
