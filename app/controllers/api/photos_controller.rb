@@ -1,13 +1,15 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.find_by_user_id(params[:user_id])
+    @photos = Photo.all
   end
 
   def create
+    print "84320423890"
     @photo = Photo.new(photo_params)
-    @photo.author = current_user
-    unless @photo.save
+    if @photo.save
+      render show
+    else
       render json: @photo.errors.full_messages, status: 422
     end
   end
@@ -28,6 +30,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo ? @photo.destroy :
     (render json: ['Photo does not exist'], status: 410)
+  end
 
   private
 

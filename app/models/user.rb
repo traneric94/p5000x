@@ -17,8 +17,12 @@ class User < ApplicationRecord
 
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
-  # TODO email uniqueness
+  validates :email, uniqueness:true, allow_blank: true;
   validates :password, length: { minimum: 6 }, allow_nil: true
+
+  has_many :photos,
+  foreign_key: :author_id,
+  class_name: :Photo
 
   after_initialize :ensure_session_token
 

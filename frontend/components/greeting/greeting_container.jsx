@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { logOut } from '../../actions/session_actions';
 import Greeting from './greeting';
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 const msp = (state, ownProps) => {
-  // console.log(ownProps)
   return {
     currentUser: state.session.currentUser,
     ownProps

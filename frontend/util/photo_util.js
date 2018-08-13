@@ -1,7 +1,7 @@
 export const getPhotos = () => (
   $.ajax({
     method: 'GET',
-    url: '/api/photos'
+    url: `/api/user/photos`,
   })
 );
 
@@ -11,6 +11,14 @@ export const getPhoto = (id) => (
     url: `/api/photos/${id}`
   })
 );
+
+export const createPhoto = (photo) => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/photos',
+    data: { photo }
+  })
+)
 
 export const updatePhoto = (photo) => (
   $.ajax({
