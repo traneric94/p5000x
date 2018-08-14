@@ -20,7 +20,8 @@ class PhotoForm extends React.Component {
       formData.append('photo[image]', this.state.photoFile);
     }
     formData.append('photo[description]', this.state.description);
-    formData.append('photo[author_id]', this.props.currentUser.id)
+    formData.append('photo[author_id]', this.props.currentUser.id);
+    console.log(this.props)
     $.ajax({
       url: 'api/photos',
       method: 'POST',
