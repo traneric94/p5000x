@@ -7,7 +7,9 @@ import {
 } from '../../actions/photo_actions';
 import Photos from './photos';
 
-const msp = (state) => {
+//TODO update and delete
+
+const msp = state => {
   return {
     currentUser: state.session.currentUser,
     photos: Object.values(state.entities.photos)

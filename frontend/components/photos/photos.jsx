@@ -13,7 +13,7 @@ class Photos extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="photos-container">
         {
           this.props.photos.map(
             photo => (

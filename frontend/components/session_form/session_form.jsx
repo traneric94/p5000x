@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/yourphotos');
     }
   }
 
@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state
-    console.log(user);
     this.props.processForm(user);
   }
 
@@ -95,13 +94,13 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input
-              className="newUser mainButton"
+              className="button-primary mainButton"
               type="submit"
               value={this.buttonStatus}
             />
             <button
               onClick={this.loginWithDemo}
-              className="newUser mainButton"> DEMO LOGIN </button>
+              className="button-primary mainButton"> DEMO LOGIN </button>
           </div>
         </form>
       </div>

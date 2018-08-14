@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
     @current_user = nil
   end
 
+  # def after_sign_out(resource_or_scope)
+  #   root
+  # end
+
 end

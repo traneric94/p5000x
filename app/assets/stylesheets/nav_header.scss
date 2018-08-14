@@ -21,7 +21,7 @@
   height: 40px;
 }
 
-.newUser {
+.button-primary {
   background-color: #34bf49;
   color: #fff;
   padding: 14px 25px;
@@ -43,7 +43,8 @@
   background: #fff;
   border: 1px solid #ccc;
   width: 100px;
-  margin-right: 30px;
+  margin-right: 150px;
+  margin-top: -3px;
   -webkit-padding-start: 0px;
 }
 
@@ -63,13 +64,24 @@
 
 }
 
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
 
 .profile-pic {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin-top: 5px;
   display: inline;
+}
+
+.dropdown-button {
+  font-size: 14px;
+  border-top: 0.5px solid;
+  border-top-color: gray
 }
 
 #logo {
@@ -79,17 +91,14 @@
   margin-top: 5px;
 }
 
-#logout {
-  font-size: 14px;
-  border-top: 0.5px solid;
-  border-top-color: gray
-
-}
-
 #second-button {
   background: #fff;
   color: black;
   &:hover {
     color: rgb(28,151, 227)
   }
+}
+
+#upload {
+  height: 43px;
 }
