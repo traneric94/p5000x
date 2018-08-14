@@ -20,6 +20,8 @@ class Photos extends React.Component {
               <PhotosItem
                 key={photo.id}
                 photo={ photo }
+                deletePhoto={this.props.deletePhoto}
+                currentUser={this.props.currentUser}
               />
             )
           )

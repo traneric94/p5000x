@@ -16,7 +16,6 @@ Modal.setAppElement(document.getElementById('root'));
 class PhotosItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       modalIsOpen: false
     };
@@ -24,6 +23,7 @@ class PhotosItem extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.renderButton = this.renderButton.bind(this);
   }
 
   openModal() {
@@ -36,6 +36,21 @@ class PhotosItem extends React.Component {
 
   closeModal() {
     this.setState({ modalIsOpen: false })
+  }
+
+  renderButton() {
+    console.log(this.props)
+    if (this.props.currentUser.id === this.props.photo.author_id) {
+      return (
+        <button
+          onClick={() => this.props.deletePhoto(this.props.photo.id)
+          .then(() => location.reload())}>Delete</button>
+      )
+    } else {
+      return (
+        <button> Like </button>
+      )
+    }
   }
 
   render() {
@@ -55,6 +70,8 @@ class PhotosItem extends React.Component {
             <div className="details">
               <h1 ref={subtitle => this.subtitle = subtitle}> {this.props.photo.title} </h1>
               <h2>{this.props.photo.description}</h2>
+              {this.renderButton()}
+
             </div>
           </div>
         </Modal>

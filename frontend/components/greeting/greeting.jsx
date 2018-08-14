@@ -33,7 +33,6 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
           <img className="profile-pic" src={ownProps.profile}/>
           <ul className="nav-header-dropdown">
             <li><Link to="/profile" className="dropdown-button" >Profile</Link></li>
-            <li><Link to="/settings" className="dropdown-button" >Settings</Link></li>
             <li><Link to="/yourphotos" className="dropdown-button" >Photos</Link></li>
             <li><Link className="dropdown-button"
               onClick={logOut}
