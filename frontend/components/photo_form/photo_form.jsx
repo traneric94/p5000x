@@ -28,7 +28,7 @@ class PhotoForm extends React.Component {
       data: formData,
       contentType: false,
       processData: false
-    });
+    }).then(() => this.props.location.reload());
   }
 
   update(field) {
