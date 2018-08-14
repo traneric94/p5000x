@@ -21,6 +21,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :photos,
+  primary_key: :id,
   foreign_key: :author_id,
   class_name: :Photo
 
