@@ -22,8 +22,8 @@ class Photo < ApplicationRecord
   has_one_attached :image
 
   def ensure_photo
-    unless self.photo.attached?
-      errors[:photo] << "Requires photo"
+    unless self.image.attached?
+      errors[:image] << "Requires image"
     end
   end
 end
