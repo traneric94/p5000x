@@ -21,14 +21,13 @@ class PhotoForm extends React.Component {
     }
     formData.append('photo[description]', this.state.description);
     formData.append('photo[author_id]', this.props.currentUser.id);
-    console.log(this)
     $.ajax({
       url: 'api/photos',
       method: 'POST',
       data: formData,
       contentType: false,
       processData: false
-    }).then(() => this.props.location.reload());
+    }).then((photo) => location.reload())
   }
 
   update(field) {
