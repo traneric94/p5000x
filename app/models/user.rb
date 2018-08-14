@@ -25,6 +25,11 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Photo
 
+  has_many :likes,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Like
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)

@@ -6,7 +6,8 @@ class Api::PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    if @photo.save
+    @photo.author_id = current_user.id
+    if @photo.save!
       @photos = Photo.all
       render :index
     else

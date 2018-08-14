@@ -13,6 +13,10 @@ class PhotoForm extends React.Component {
     this.preview = null;
   }
 
+  componentDidMount() {
+    
+  }
+
   handleSubmit(e) {
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);

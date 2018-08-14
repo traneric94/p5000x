@@ -9,7 +9,7 @@ const SessionReducer = (state = templateUser, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, templateUser, { currentUser: action.currentUser });
+      return merge({}, templateUser, { currentUser: action.currentUser.user });
     default:
       return state;
   }
