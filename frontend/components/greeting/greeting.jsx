@@ -41,7 +41,7 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
           </ul>
       </hgroup>
       <div className="login-signup">
-        <button id="upload" className="button-primary" onClick={() => openModal('create') }>
+        <button className="upload button-primary" onClick={() => openModal('create') }>
           Upload</button>
       </div>
     </div>
