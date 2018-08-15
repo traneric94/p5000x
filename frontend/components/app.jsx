@@ -12,7 +12,7 @@ const App = () => (
     <Modal />
     <header>
       <h1 className="nav-bar">
-        <img id="logo" src={window.logo} />
+        <Link to='/'><img id="logo" src={window.logo} /></Link>
         <GreetingContainer profile ={window.profile_pic}/>
       </h1>
       <hr/>
@@ -20,7 +20,7 @@ const App = () => (
 
     <AuthRoute path='/login' component={SessionFormContainer} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
-    <Route exact path='/' />
+    <Route exact path='/' component={PhotosContainer} />
     <ProtectedRoute path='/yourphotos' component={PhotosContainer} />
     <ProtectedRoute path='/profile'/>
 

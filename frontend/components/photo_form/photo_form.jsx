@@ -72,7 +72,11 @@ class PhotoForm extends React.Component {
             </label>
             <br/>
             <br/>
-            <input className="upload button-primary" type="submit" value="Upload Photo"/>
+            <input
+              id="main-upload"
+              className="upload button-primary"
+              type="submit"
+              value="Upload Photo"/>
           </div>
         </form>
       </div>

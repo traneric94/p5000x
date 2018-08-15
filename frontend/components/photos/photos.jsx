@@ -8,6 +8,7 @@ class Photos extends React.Component {
   }
 
   componentDidMount() {
+    console.log("before")
     this.props.getPhotos();
   }
 
@@ -16,14 +17,21 @@ class Photos extends React.Component {
       <div className="photos-container">
         {
           this.props.photos.map(
-            photo => (
-              <PhotosItem
-                key={photo.id}
-                photo={ photo }
-                deletePhoto={this.props.deletePhoto}
-                currentUser={this.props.currentUser}
-              />
-            )
+            (photo, i) => {
+              if (this.props.currentUser && (this.props.location.pathname === "/" ||
+                this.props.photos[i].author_id === this.props.currentUser.id)) {
+                return  (
+                  <PhotosItem
+                    key={photo.id}
+                    photo={ photo }
+                    deletePhoto={this.props.deletePhoto}
+                    currentUser={this.props.currentUser}
+                  />
+                );
+              } else {
+                return null;
+              }
+            }
           )
         }
       </div>

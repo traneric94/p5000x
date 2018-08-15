@@ -33,7 +33,7 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
           <img className="profile-pic" src={ownProps.profile}/>
           <ul className="nav-header-dropdown">
             <li><Link to="/profile" className="dropdown-button" >Profile</Link></li>
-            <li><Link to="/yourphotos" className="dropdown-button" >Photos</Link></li>
+            <li><Link to="/yourphotos" className="dropdown-button" >Your Photos</Link></li>
             <li><Link className="dropdown-button"
               onClick={logOut}
               to="/"
@@ -41,7 +41,7 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
           </ul>
       </hgroup>
       <div className="login-signup">
-        <button className="upload button-primary" onClick={() => openModal('create') }>
+        <button id="nav-upload" className="button-primary" onClick={() => openModal('create') }>
           Upload</button>
       </div>
     </div>

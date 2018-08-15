@@ -72,7 +72,7 @@ class PhotoEdit extends React.Component {
             </label>
             <br/>
             <br/>
-            <input className="upload button-primary" type="submit" value="Update Photo"/>
+            <input className="upload button-primary" type="submit" value="Update"/>
           </div>
         </form>
       </div>

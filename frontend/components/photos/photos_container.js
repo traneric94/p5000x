@@ -5,6 +5,7 @@ import {
   updatePhoto,
   deletePhoto
 } from '../../actions/photo_actions';
+
 import Photos from './photos';
 
 const msp = state => {
