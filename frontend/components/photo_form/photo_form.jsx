@@ -14,7 +14,7 @@ class PhotoForm extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   handleSubmit(e) {
@@ -51,7 +51,7 @@ class PhotoForm extends React.Component {
           onSubmit={this.handleSubmit.bind(this)}
         >
         <div className="upload-photo">
-          <label id="upload-photo-button"> Select Photo
+          <label className="action-button"> Select Photo
             <input type="file"
              onChange={this.handleFile.bind(this)} />
           </label>
@@ -67,16 +67,16 @@ class PhotoForm extends React.Component {
                 onChange={this.update("title")}
                 ></input>
             </label>
-            <br/>
+            <br/><br/>
             <label htmlFor="photo-description"> Description
-              <br/>
+              <br/><br/>
               <textarea
                 value={this.state.description}
                 onChange={this.update("description")}></textarea>
             </label>
             <br/>
             <br/>
-            <input type="submit" value="Upload Photo"/>
+            <input className="button-primary" type="submit" value="Upload Photo"/>
           </div>
         </form>
       </div>

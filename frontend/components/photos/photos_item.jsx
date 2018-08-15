@@ -43,12 +43,14 @@ class PhotosItem extends React.Component {
     if (this.props.currentUser.id === this.props.photo.author_id) {
       return (
         <button
+          className="action-button"
+          id="delete"
           onClick={() => this.props.deletePhoto(this.props.photo.id)
           .then(() => location.reload())}>Delete</button>
       )
     } else {
       return (
-        <button> Like </button>
+        <button className="action-button"> Like </button>
       )
     }
   }

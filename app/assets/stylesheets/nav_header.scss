@@ -36,7 +36,7 @@
   text-align: center;
   display: inline-block;
   text-decoration: none;
-  height: 15px;
+  height: 50px;
 }
 
 .newUser:hover {
@@ -56,13 +56,13 @@
   -webkit-padding-start: 0px;
 }
 
-.nav-header-dropdown li button {
-  width: 100%;
-  text-align: center;
-  border: 0px;
-  text-align: left;
-  color: rgb(81, 85, 88);
-}
+// .nav-header-dropdown li button {
+//   width: 100%;
+//   text-align: center;
+//   border: 0px;
+//   text-align: left;
+//   color: rgb(81, 85, 88);
+// }
 
 .dropdown:hover .nav-header-dropdown {
   display: block;
@@ -88,8 +88,9 @@
 
 .dropdown-button {
   font-size: 14px;
-  border-top: 0.5px solid;
-  border-top-color: gray
+  border: 0;
+  padding: auto;
+  border-radius: 0;
 }
 
 #logo {

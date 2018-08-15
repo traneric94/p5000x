@@ -1,16 +1,21 @@
 .upload-form-container {
-  width: 500px;
+  width: 600px;
   height: 500px;
   display: flex;
   align-items: center;
   text-align: center;
+  border-radius: 10%;
 }
 
 input[type="file"]{
   display: none;
 }
 
-#upload-photo-button {
+input {
+  margin-top: 10px;
+}
+
+.action-button {
   border: 1px solid;
   padding: 6px 12px;
   cursor: pointer;
@@ -26,5 +31,5 @@ input[type="file"]{
 
 .input-details {
   float: right;
-  margin-right: 20px;
+  margin-right: 60px;
 }
