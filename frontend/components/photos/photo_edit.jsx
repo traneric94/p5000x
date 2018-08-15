@@ -18,6 +18,9 @@ class PhotoEdit extends React.Component {
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
     formData.append('photo[id]', this.state.id);
+    if (this.state.photoFile) {
+      formData.append('photo[image]', this.state.photoFile);
+    }
     $.ajax({
       url: `api/photos/${this.state.id}`,
       method: 'PATCH',
@@ -32,7 +35,7 @@ class PhotoEdit extends React.Component {
   }
 
   handleFile(e) {
-    this.preview = URL.createObjectURL(e.currentTarget.files[0])
+    this.state.preview = URL.createObjectURL(e.currentTarget.files[0])
     this.setState({ photoFile: e.currentTarget.files[0] })
   }
 
