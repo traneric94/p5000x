@@ -1,29 +1,26 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class PhotoForm extends React.Component {
+class PhotoEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
+      title: this.props.photo.title,
       photoFile: null,
-      preview: null,
-      description: ""
+      preview: this.props.photo.photoUrl,
+      description: this.props.photo.description,
+      id: this.props.photo.id
     }
-    this.preview = null;
   }
 
   handleSubmit(e) {
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
-    if (this.state.photoFile) {
-      formData.append('photo[image]', this.state.photoFile);
-    }
     formData.append('photo[description]', this.state.description);
-    formData.append('photo[author_id]', this.props.currentUser.id);
+    formData.append('photo[id]', this.state.id);
     $.ajax({
-      url: 'api/photos',
-      method: 'POST',
+      url: `api/photos/${this.state.id}`,
+      method: 'PATCH',
       data: formData,
       contentType: false,
       processData: false
@@ -52,7 +49,7 @@ class PhotoForm extends React.Component {
              onChange={this.handleFile.bind(this)} />
           </label>
           <br/><br/>
-          <img className="preview-pic" src={this.preview}/>
+          <img className="preview-pic" src={this.state.preview}/>
         </div>
           <div className="input-details">
             <label> Title
@@ -72,7 +69,7 @@ class PhotoForm extends React.Component {
             </label>
             <br/>
             <br/>
-            <input className="upload button-primary" type="submit" value="Upload Photo"/>
+            <input className="upload button-primary" type="submit" value="Update Photo"/>
           </div>
         </form>
       </div>
@@ -80,4 +77,4 @@ class PhotoForm extends React.Component {
   }
 }
 
-export default PhotoForm;
+export default PhotoEdit;

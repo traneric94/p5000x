@@ -5,6 +5,7 @@ export const getPhotos = () => (
   })
 );
 
+
 export const getPhoto = (id) => (
   $.ajax({
     method: 'GET',

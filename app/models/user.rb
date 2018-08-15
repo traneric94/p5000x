@@ -20,15 +20,9 @@ class User < ApplicationRecord
   validates :email, uniqueness:true, allow_blank: true;
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :photos,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: :Photo
+  has_many :photos, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
-  has_many :likes,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: :Like
 
   after_initialize :ensure_session_token
 

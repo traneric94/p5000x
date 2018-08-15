@@ -1,6 +1,8 @@
 class Api::PhotosController < ApplicationController
 
   def index
+    # if params[:ownId]
+    #   @photos = Photo. #TODO
     @photos = Photo.all
   end
 
@@ -36,7 +38,7 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :author_id, :image)
+    params.require(:photo).permit(:title, :description, :author_id, :image, :ownId)
   end
 
 end

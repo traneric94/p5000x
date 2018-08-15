@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createPhoto, getPhotos } from '../../actions/photo_actions';
+import { createPhoto } from '../../actions/photo_actions';
 import PhotoForm from './photo_form';
 
 const msp = state => {

@@ -8,7 +8,6 @@ import {
 import Photos from './photos';
 
 const msp = state => {
-  console.log("state", state);
   return {
     currentUser: state.session.currentUser,
     photos: Object.values(state.entities.photos)

@@ -46,7 +46,18 @@
 .show {
   max-height: 500px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.form-buttons {
+  float: right;
+  margin-top: 10px;
+}
+.action-buttons:active:focus {
+  outline:none;
+}
+.action-buttons:focus {
+  outline: none;
 }
 
 
