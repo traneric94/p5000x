@@ -6,10 +6,9 @@ export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
 export const REMOVE_PHOTO = "REMOVE_PHOTO";
 
 const receivePhotos = photos => ({ type: RECEIVE_PHOTOS, photos });
+const receivePhoto = photo => ({ type: RECEIVE_PHOTO, photo });
+const removePhoto = () => ({ type: REMOVE_PHOTO })
 
-const receivePhoto = photos => ({ type: RECEIVE_PHOTO, photo });
-
-export const removePhoto = () => ({ type: REMOVE_PHOTO })
 
 export const receiveErrors = errors => ({ type: RECEIVE_PHOTO_ERRORS, errors });
 
@@ -23,6 +22,13 @@ export const getPhotos = () => dispatch => (
 export const getPhoto = (id) => dispatch => (
   PhotoAPIUtil.getPhoto(id).then(
     photo => (dispatch(receivePhoto(photo))),
+    err => (dispatch(receiveErrors(err.response.JSON)))
+  )
+);
+
+export const createPhoto = (photo) => dispatch => (
+  PhotoAPIUtil.createPhoto(photo).then(
+    photo => (dispatch(receivePhotos(photo))),
     err => (dispatch(receiveErrors(err.response.JSON)))
   )
 );

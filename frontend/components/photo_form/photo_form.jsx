@@ -10,6 +10,7 @@ class PhotoForm extends React.Component {
       preview: null,
       description: ""
     }
+
     this.preview = null;
   }
 
@@ -21,15 +22,18 @@ class PhotoForm extends React.Component {
     }
     formData.append('photo[description]', this.state.description);
     formData.append('photo[author_id]', this.props.currentUser.id);
-    $.ajax({
-      url: 'api/photos',
-      method: 'POST',
-      data: formData,
-      contentType: false,
-      processData: false
-    }).then((photo) => {
-      location.reload()
-    })
+
+    this.props.createPhoto(formData).then(() => location.reload());
+
+    // $.ajax({
+    //   url: 'api/photos',
+    //   method: 'POST',
+    //   data: formData,
+    //   contentType: false,
+    //   processData: false
+    // }).then((photo) => {
+    //   location.reload()
+    // })
   }
 
   update(field) {
