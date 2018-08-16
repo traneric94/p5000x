@@ -1,8 +1,6 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    # if params[:ownId]
-    #   @photos = Photo. #TODO
     @photos = Photo.all
   end
 

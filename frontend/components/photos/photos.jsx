@@ -11,6 +11,14 @@ class Photos extends React.Component {
     this.props.getPhotos();
   }
 
+  checkPhotoCount() {
+    if (this.props.photos.filter((el) => (
+      el.author_id === this.props.currentUser.id)
+    ).length < 1) {
+      return(<h1> Add Some Photos! </h1>)
+    }
+  }
+
 // Render filtering here, will need to refactor for scalalability,
 // but instant reload atm.
   render() {
@@ -24,30 +32,32 @@ class Photos extends React.Component {
           </div>
         </div>
       )
-    }
-    return (
-      <div className="photos-container">
-        {
-          this.props.photos.map(
-            (photo, i) => {
-              if (this.props.currentUser && (this.props.location.pathname === "/" ||
-                this.props.photos[i].author_id === this.props.currentUser.id)) {
-                return  (
-                  <PhotosItem
-                    key={photo.id}
-                    photo={ photo }
-                    deletePhoto={this.props.deletePhoto}
-                    currentUser={this.props.currentUser}
-                  />
-                );
-              } else {
-                return null;
+    } else {
+      return (
+        <div className="photos-container">
+          {this.checkPhotoCount()}
+          {
+            this.props.photos.map(
+              (photo, i) => {
+                if (this.props.currentUser && (this.props.location.pathname === "/" ||
+                  photo.author_id === this.props.currentUser.id)) {
+                  return  (
+                    <PhotosItem
+                      key={photo.id}
+                      photo={ photo }
+                      deletePhoto={this.props.deletePhoto}
+                      currentUser={this.props.currentUser}
+                    />
+                  );
+                } else {
+                  return null;
+                }
               }
-            }
-          )
-        }
-      </div>
-    );
+            )
+          }
+        </div>
+      );
+    }
   }
 }
 

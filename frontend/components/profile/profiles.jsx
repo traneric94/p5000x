@@ -13,7 +13,7 @@ class Profiles extends React.Component {
 
   render() {
     return (
-      <div className="profiles-container">
+      <div className="photos-container">
         {
           this.props.users.map((user, idx) => {
             return (

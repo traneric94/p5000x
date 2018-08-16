@@ -37,13 +37,13 @@ class ProfileItem extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
       <div>
         <div className="default-profile" onClick={this.openModal}>
+          <img src={window.profile_pic}/>
+          <br/>
           {this.props.user.username}
         </div>
-
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -51,8 +51,10 @@ class ProfileItem extends React.Component {
           style={customStyles}
           ariaHideApp={false} >
           <h1 ref={subtitle => this.subtitle = subtitle}>{this.props.user.username}</h1>
+          <br/>
+          <img src={window.profile_pic}/>
+          <br/>
           <button> Follow </button>
-
         </Modal>
       </div>
     )

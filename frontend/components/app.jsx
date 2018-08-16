@@ -8,7 +8,7 @@ import PhotosContainer from './photos/photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from './profile/profile_container';
 import OwnProfileContainer from './own_profile/own_profile_container';
-// import SplashContainer from './splash/splash_container';
+
 const App = () => (
   <div>
     <Modal />
