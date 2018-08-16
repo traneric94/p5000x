@@ -18,9 +18,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 35px;
+  height: 43px;
+  border-bottom: 1px solid;
+  border-bottom-color: #888888
 }
-
 
 .login-signup {
   font-size: 14px;

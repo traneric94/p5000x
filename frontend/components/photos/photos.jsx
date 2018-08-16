@@ -11,9 +11,20 @@ class Photos extends React.Component {
     this.props.getPhotos();
   }
 
-// Render filtered here, will need to refactor for scalalability,
+// Render filtering here, will need to refactor for scalalability,
 // but instant reload atm.
   render() {
+    if (!this.props.currentUser) {
+      return (
+        <div className="splash">
+          <img className="background-image" src={window.background}></img>
+          <div className="greeting-message">
+            <h1> Welcome to 5000px </h1>
+            <Link id="entry-button" to="/signup">Sign Up</Link>
+          </div>
+        </div>
+      )
+    }
     return (
       <div className="photos-container">
         {
