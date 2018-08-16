@@ -1,10 +1,10 @@
 import * as SessionAPIUtil from '../util/session_util';
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+export const RECEIVE_SESSION_USER = "RECEIVE_SESSION_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_ERRORS";
 
 const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
+  type: RECEIVE_SESSION_USER,
   currentUser
 });
 

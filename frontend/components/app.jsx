@@ -6,6 +6,8 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import PhotosContainer from './photos/photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import ProfileContainer from './profile/profile_container';
+import OwnProfileContainer from './own_profile/own_profile_container';
 
 const App = () => (
   <div>
@@ -22,7 +24,8 @@ const App = () => (
     <AuthRoute path='/signup' component={SessionFormContainer} />
     <Route exact path='/' component={PhotosContainer} />
     <ProtectedRoute path='/yourphotos' component={PhotosContainer} />
-    <ProtectedRoute path='/profile'/>
+    <ProtectedRoute path='/users' component={ProfileContainer}/>
+    <ProtectedRoute path='/profile' component={OwnProfileContainer} />
 
   </div>
 );

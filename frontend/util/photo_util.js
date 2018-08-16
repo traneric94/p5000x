@@ -1,7 +1,7 @@
 export const getPhotos = () => (
   $.ajax({
     method: 'GET',
-    url: `/api/user/photos`,
+    url: `/api/photos`,
   })
 );
 

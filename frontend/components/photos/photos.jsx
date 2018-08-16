@@ -11,6 +11,8 @@ class Photos extends React.Component {
     this.props.getPhotos();
   }
 
+// Render filtered here, will need to refactor for scalalability,
+// but instant reload atm.
   render() {
     return (
       <div className="photos-container">
