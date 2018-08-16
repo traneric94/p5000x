@@ -8,7 +8,6 @@ class Photos extends React.Component {
   }
 
   componentDidMount() {
-    console.log("before")
     this.props.getPhotos();
   }
 

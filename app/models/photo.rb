@@ -19,11 +19,6 @@ class Photo < ApplicationRecord
   foreign_key: :author_id,
   class_name: :User
 
-  has_many :likes,
-  primary_key: :id,
-  foreign_key: :photo_id,
-  class_name: :Like
-
   has_one_attached :image
 
   def ensure_photo

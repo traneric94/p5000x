@@ -17,12 +17,20 @@ class User < ApplicationRecord
 
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
-  validates :email, uniqueness:true, allow_blank: true;
+  validates :email, uniqueness: true, allow_blank: true;
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :photos, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :photos,
+  foreign_key: :author_id,
+  class_name: :User
 
+  has_many :followers,
+  foreign_key: :followee_id,
+  class_name: :User
+
+  has_many :is_following,
+  foreign_key: :follower_id,
+  class_name: :User
 
   after_initialize :ensure_session_token
 
