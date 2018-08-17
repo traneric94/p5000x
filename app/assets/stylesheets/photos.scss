@@ -73,17 +73,19 @@ textarea {
 
 .greeting-message {
   position: absolute;
-  top: 50%;
+  text-shadow: 1px 1px #000000;
+  color: #F3EFE0;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #entry-button {
   text-decoration: none;
-  color: white;
+  text-shadow: 1px 1px #000000;
+  border: 2px #F3EFE0;
+  color: #F3EFE0;
   padding: 10px 20px;
-  border: 2px solid;
-  border-radius: 60%;
   &:hover {
     transform: scale(2) perspective(10px)
   }

@@ -92,7 +92,8 @@ class PhotosItem extends React.Component {
         </div>
         <div className="details">
           <h1 ref={subtitle => this.subtitle = subtitle}>
-            {this.props.photo.title} </h1>
+            {this.props.photo.title}
+          </h1>
           <h2>{this.props.photo.description}</h2>
           {this.renderButton()}
         </div>
