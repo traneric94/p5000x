@@ -4,7 +4,7 @@
 
 ### [Live Demo](https://p5000x.herokuapp.com/#/)
 
-## Overview
+## Technologies
 
 5000px utilizes a Rails/PostgreSQL backend and React.js/Redux frontend.
 
@@ -15,11 +15,9 @@ This project was produced over the course of 10 days, and will be iteratively de
 ## Features
 
 + Secure frontend and backend user authentication using BCrypt.
-+ Users have full CRUD functionality for photos.
++ Users have full CRUD functionality for photos with modal views.
 + Adaptive home feed to display all photos.
 
-
-## Technical Features
 ### Home Feed
 
 ![Home Feed](https://github.com/traneric94/p5000x/blob/master/app/assets/images/home%20feed.png)
@@ -31,6 +29,8 @@ This project was produced over the course of 10 days, and will be iteratively de
 ### Modal Photo Edit
 
 ![Photo Edit](https://github.com/traneric94/p5000x/blob/master/app/assets/images/edit.png)
+
+## Code Design
 
 5000px uses modal views to maximize interactivity for the user, and add a layer of depth to 5000px. The DRY principle, made toggling the display and edit views of Photos the most intuitive, rather than creating entirely separate components and modals for each of the CRUD photo functions.
 
@@ -71,8 +71,7 @@ This project was produced over the course of 10 days, and will be iteratively de
   }
 }
 ```
-
-### Possible Future Features
+## Possible Future Features
 
 + User Interactions via Follows/Likes
 + Photo Tags
