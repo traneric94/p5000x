@@ -78,22 +78,17 @@ class PhotosItem extends React.Component {
   }
 
   render() {
-    let editForm = this.state.visible ? (
+    let display = this.state.visible ? (
       <div>
         <PhotoEditContainer photo={this.props.photo} />
-        {this.renderButton()}
-      </div>
-    ) : null;
-
-    let displayPhoto = this.state.visible ? null : (
+        {this.renderButton()}</div>
+    ) : (
       <div className="show">
         <div className="open-pic">
-          <img src={this.props.photo.photoUrl}/>
-        </div>
+          <img src={this.props.photo.photoUrl}/></div>
         <div className="details">
           <h1 ref={subtitle => this.subtitle = subtitle}>
-            {this.props.photo.title}
-          </h1>
+            {this.props.photo.title} </h1>
           <h2>{this.props.photo.description}</h2>
           {this.renderButton()}
         </div>
@@ -111,13 +106,11 @@ class PhotosItem extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           ariaHideApp={false} >
-          {displayPhoto}
-          {editForm}
+          {display}
         </Modal>
       </div>
     )
   }
-
 }
 
 export default PhotosItem;
