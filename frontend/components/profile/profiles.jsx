@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ProfileItem from './profile_item';
 
+const arrayOfPics = [window.zuck, window.trump, window.disaster]
+
 class Profiles extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +23,7 @@ class Profiles extends React.Component {
                 key={idx}
                 user={user}
                 currentUser={this.props.currentUser}
+                profile={arrayOfPics[idx]}
               />
             )
           }

@@ -1,7 +1,7 @@
 .default-profile {
-  margin-top: 10px;
-
-
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
 .username {
@@ -9,5 +9,16 @@
 }
 
 .main-profile-pic {
-  margin-left: 38%;
+  display:block;
+  margin:auto;
+  border-radius: 50%
+}
+
+.profile-item-container {
+  text-align: center;
+}
+
+.show-profile {
+  width: 325px;
+  height: 300px;
 }
