@@ -6,7 +6,7 @@ Photo.destroy_all
 
 user0 = User.create!(username: "UserMcUserface", password: "password")
 user1 = User.create!(username: "@RealDonaldTrump", password: "password")
-user2 = User.create!(username: "ThirdWorldBeanFarmer", password: "password")
+user2 = User.create!(username: "MyLifeIsABeautifulDisaster", password: "password")
 
 photo0 = Photo.new(
   title: "BØRNS",
@@ -84,22 +84,29 @@ photo13 = Photo.new(
   description: "",
   author_id: user0.id
 )
+photo14 = Photo.new(
+  title: "April 29 1992",
+  description: "",
+  author_id: user0.id
+)
 
-photo0.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/borns.jpg"), filename: "borns.jpg")
-photo1.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/monkey.jpg"), filename: "monkey.jpg")
-photo2.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/ryan.jpg"), filename: "ryan.jpg")
-photo3.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/lady.jpg"), filename: "lady.jpg")
-photo4.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/dog.jpg"), filename: "dog.jpg")
-photo5.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/lunar.jpg"), filename: "lunar.jpg")
-photo6.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/words.jpg"), filename: "words.jpg")
-photo61.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/bouquet.jpg"), filename: "bouquet.jpg")
-photo7.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/statue.jpg"), filename: "statue.jpg")
-photo8.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/baby.jpg"), filename: "baby.jpg")
-photo9.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/animal.jpg"), filename: "animal.jpg")
-photo10.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/japan.jpg"), filename: "japan.jpg")
-photo11.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/banjo.jpg"), filename: "banjo.jpg")
-photo12.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/wood.jpg"), filename: "wood.jpg")
-photo13.image.attach(io: File.open("/Users/eric_tran/Desktop/pictures/dogg.jpg"), filename: "dogg.jpg")
+
+photo0.image.attach(io: File.open("./app/assets/images/seedpics/borns.jpg"), filename: "borns.jpg")
+photo1.image.attach(io: File.open("./app/assets/images/seedpics/monkey.jpg"), filename: "monkey.jpg")
+photo2.image.attach(io: File.open("./app/assets/images/seedpics/ryan.jpg"), filename: "ryan.jpg")
+photo3.image.attach(io: File.open("./app/assets/images/seedpics/lady.jpg"), filename: "lady.jpg")
+photo4.image.attach(io: File.open("./app/assets/images/seedpics/dog.jpg"), filename: "dog.jpg")
+photo5.image.attach(io: File.open("./app/assets/images/seedpics/lunar.jpg"), filename: "lunar.jpg")
+photo6.image.attach(io: File.open("./app/assets/images/seedpics/words.jpg"), filename: "words.jpg")
+photo61.image.attach(io: File.open("./app/assets/images/seedpics/bouquet.jpg"), filename: "bouquet.jpg")
+photo7.image.attach(io: File.open("./app/assets/images/seedpics/statue.jpg"), filename: "statue.jpg")
+photo8.image.attach(io: File.open("./app/assets/images/seedpics/baby.jpg"), filename: "baby.jpg")
+photo9.image.attach(io: File.open("./app/assets/images/seedpics/animal.jpg"), filename: "animal.jpg")
+photo10.image.attach(io: File.open("./app/assets/images/seedpics/japan.jpg"), filename: "japan.jpg")
+photo11.image.attach(io: File.open("./app/assets/images/seedpics/banjo.jpg"), filename: "banjo.jpg")
+photo12.image.attach(io: File.open("./app/assets/images/seedpics/wood.jpg"), filename: "wood.jpg")
+photo13.image.attach(io: File.open("./app/assets/images/seedpics/dogg.jpg"), filename: "dogg.jpg")
+photo14.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
 
 photo0.save!
 photo1.save!
@@ -115,3 +122,4 @@ photo10.save!
 photo11.save!
 photo12.save!
 photo13.save!
+photo14.save!
