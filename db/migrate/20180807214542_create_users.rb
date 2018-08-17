@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :profile_pic_url
       t.string :password_digest, null: false
       t.string :session_token, null:false
-
+      
       t.timestamps
     end
     add_index :users, :username, unique: true

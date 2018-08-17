@@ -10,7 +10,7 @@ const msp = state => {
 }
 
 const mdp = dispatch => ({
-  updatePhoto: (photo) => dispatch(updatePhoto(photo)),
+  updatePhoto: (photo, photoId) => dispatch(updatePhoto(photo, photoId)),
 });
 
 export default connect(msp, mdp)(PhotoEdit)

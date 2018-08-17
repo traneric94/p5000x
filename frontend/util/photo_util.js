@@ -5,7 +5,6 @@ export const getPhotos = () => (
   })
 );
 
-
 export const getPhoto = (id) => (
   $.ajax({
     method: 'GET',
@@ -13,21 +12,23 @@ export const getPhoto = (id) => (
   })
 );
 
-export const createPhoto = (photo) => (
+export const createPhoto = (data) => (
   $.ajax({
     method: 'POST',
     url: 'api/photos',
-    data: photo,
+    data: data,
     contentType: false,
     processData: false
   })
 )
 
-export const updatePhoto = (photo) => (
+export const updatePhoto = (data, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/photos/${photo.id}`,
-    data: { photo }
+    url: `/api/photos/${id}`,
+    data: data,
+    contentType: false,
+    processData: false,
   })
 );
 

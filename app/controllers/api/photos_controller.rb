@@ -21,9 +21,12 @@ class Api::PhotosController < ApplicationController
 
 
   def update
-    @photo = Photo.find(params[:id])
+    @photo = Photo.find(params[:photo][:id])
     unless @photo && @photo.update_attributes(photo_params)
       render json: @photo.errors.full_messages, status: 400
+    else
+      @photos = Photo.all
+      render :index
     end
   end
 
@@ -36,7 +39,7 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :author_id, :image, :ownId)
+    params.require(:photo).permit(:title, :description, :author_id, :image, :id)
   end
 
 end

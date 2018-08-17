@@ -14,7 +14,7 @@ class Photos extends React.Component {
   checkPhotoCount() {
     if (this.props.photos.filter((el) => (
       el.author_id === this.props.currentUser.id)
-    ).length < 1) {
+    ).length < 1 && this.currentUser && this.props.photos.length > 0) {
       return(<h1> Add Some Photos! </h1>)
     }
   }
@@ -22,6 +22,7 @@ class Photos extends React.Component {
 // Render filtering here, will need to refactor for scalalability,
 // but instant reload atm.
   render() {
+    console.log(this)
     if (!this.props.currentUser) {
       return (
         <div className="splash">

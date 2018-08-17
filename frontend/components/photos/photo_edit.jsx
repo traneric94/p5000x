@@ -21,13 +21,8 @@ class PhotoEdit extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    $.ajax({
-      url: `api/photos/${this.state.id}`,
-      method: 'PATCH',
-      data: formData,
-      contentType: false,
-      processData: false
-    }).then((photo) => location.reload())
+    this.props.updatePhoto(formData, this.state.id)
+
   }
 
   update(field) {
