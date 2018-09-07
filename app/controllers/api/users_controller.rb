@@ -33,7 +33,7 @@ class Api::UsersController < ApplicationController
       :username,
       :email,
       :password,
-      :profile_pic_url
+      :image
     )
   end
 

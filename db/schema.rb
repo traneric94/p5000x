@@ -45,13 +45,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_225147) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "photo_id", null: false
-    t.index ["photo_id"], name: "index_likes_on_photo_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title", null: false
     t.integer "author_id", null: false
@@ -64,7 +57,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_225147) do
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email"
-    t.string "profile_pic_url"
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false

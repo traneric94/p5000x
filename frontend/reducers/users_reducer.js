@@ -2,9 +2,9 @@ import { RECEIVE_USERS, RECEIVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const templateUser = {
+  email: "",
   username: "",
-  photos: [],
-  followers: []
+  photos: []
 };
 
 const usersReducer = (state = templateUser, action) => {

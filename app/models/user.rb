@@ -19,10 +19,11 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :email, uniqueness: true, allow_blank: true;
   validates :password, length: { minimum: 6 }, allow_nil: true
-
+  validate :ensure_photo
+  
   has_many :photos,
   foreign_key: :author_id,
-  class_name: :User
+  class_name: :Photo
 
   has_many :followers,
   foreign_key: :followee_id,
@@ -31,6 +32,14 @@ class User < ApplicationRecord
   has_many :is_following,
   foreign_key: :follower_id,
   class_name: :User
+
+  has_one_attached :image
+
+  def ensure_photo
+    unless self.image.attached?
+      self.image.attach(io: File.open("./app/assets/images/userpic.png"), filename: "userpic.png")
+    end
+  end
 
   after_initialize :ensure_session_token
 

@@ -3,7 +3,7 @@ import { fetchUser } from '../../actions/user_actions';
 import OwnProfile from './own_profile';
 
 const msp = state => {
-  // console.log(state)
+  console.log(state)
   return {
     currentUser: state.session.currentUser,
     id: state.session.currentUser.id,
