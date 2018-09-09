@@ -22,7 +22,6 @@ class Photos extends React.Component {
 // Render filtering here, will need to refactor for scalalability,
 // but instant reload atm.
   render() {
-    console.log(this)
     if (!this.props.currentUser) {
       return (
         <div className="splash">

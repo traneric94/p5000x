@@ -15,6 +15,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @photos = Photo.find(author_id: @user.id)
   end
 
   def update
