@@ -15,7 +15,7 @@ const App = () => (
     <header>
       <h1 className="nav-bar">
         <Link to='/'><img id="logo" src={window.logo} /></Link>
-        <GreetingContainer profile ={window.profile_pic}/>
+        <GreetingContainer />
       </h1>
     </header>
 

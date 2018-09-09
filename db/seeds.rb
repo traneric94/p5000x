@@ -90,6 +90,7 @@ photo14 = Photo.new(
   author_id: user0.id
 )
 
+user0.image.attach()
 
 photo0.image.attach(io: File.open("./app/assets/images/seedpics/borns.jpg"), filename: "borns.jpg")
 photo1.image.attach(io: File.open("./app/assets/images/seedpics/monkey.jpg"), filename: "monkey.jpg")

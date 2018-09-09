@@ -30,7 +30,7 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
   return (
     <div className="nav-right">
       <hgroup className="dropdown">
-          <img className="profile-pic" src={ownProps.profile}/>
+          <img className="profile-pic" src={currentUser.profileUrl}/>
           <ul className="nav-header-dropdown">
             <li><Link to="/users" className="dropdown-button" >Users</Link></li>
             <li><Link to="/profile" className="dropdown-button" >Profile</Link></li>

@@ -5,8 +5,20 @@ export const getAllPhotos = ({ photos }) => (
 export const getOwnPhotos = ({ entities, session }) => {
     let result = Object.values(entities.photos).filter(
       (photo) => {
-        return photo.author_id == session.currentUser.id
+        return photo.author_id == session.currentUser.id;
       }
     )
-    return result
+    return result;
+}
+
+export const getOtherUsers = ({ entities, session }) => {
+  let result = Object.values(entities.users).filter((user) => {
+    return user.id != session.currentUser.id;
+  })
+  return result;
+}
+
+export const getFollowedUsers = (state) => {
+  let result = [];
+  return result;
 }
