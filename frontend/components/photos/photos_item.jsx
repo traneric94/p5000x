@@ -94,7 +94,6 @@ class PhotosItem extends React.Component {
         </div>
       </div>
     );
-    console.log(this)
     return (
       <div>
         <img

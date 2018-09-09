@@ -2,12 +2,11 @@ export const getAllPhotos = ({ photos }) => (
   Object.keys(photos).map(id => photos[id])
 );
 
-export const getOwnPhotos = ({ photos, filter }) => {
-    let result = [];
-    for (let id in photos) {
-      if (photos[id].author_id === filter) {
-        result.push(photos[id])
+export const getOwnPhotos = ({ entities, session }) => {
+    let result = Object.values(entities.photos).filter(
+      (photo) => {
+        return photo.author_id == session.currentUser.id
       }
-    }
-    return result;
+    )
+    return result
 }

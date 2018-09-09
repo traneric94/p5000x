@@ -8,22 +8,23 @@ import {
   deletePhoto
 } from "../../actions/photo_actions";
 
+import { getOwnPhotos } from '../../reducers/selectors';
+
 const msp = state => {
-  console.log(state)
   return {
     currentUser: state.session.currentUser,
     id: state.session.currentUser.id,
     user: state.entities.users[state.session.currentUser.id],
-    photos: Object.values(state.entities.photos)
+    photos: Object.values(state.entities.photos),
+    ownPhotos: getOwnPhotos(state)
   };
 }
 
 const mdp = dispatch => ({
-  fetchUser: (id) => dispatch(fetchUser(id)),
   getPhotos: () => dispatch(getPhotos()),
   getPhoto: (id) => dispatch(getPhoto(id)),
   updatePhoto: (photo) => dispatch(updatePhoto(photo)),
-  deletePhoto: (id) => dispatch(deletePhoto(id))
+  deletePhoto: (id) => dispatch(deletePhoto(id)),
 });
 
 export default connect(msp, mdp)(OwnProfile);

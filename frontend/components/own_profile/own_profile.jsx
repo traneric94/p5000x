@@ -6,28 +6,31 @@ import PhotosItem from '../photos/photos_item';
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
-  }
+  } 
 
   componentDidMount() {
-    this.props.fetchUser(this.props.id);
+    this.props.getPhotos()
   }
 
   render() {
-    console.log(this)
-
-    if (!this.props.user) {return null}
-
     return (
       <div>
-        <h1 className="username"> { this.props.user.username} </h1>
-        <img src={this.props.user.profileUrl} />
+        <h1 className="center"> {this.props.currentUser.username} </h1>
+        <img src={this.props.currentUser.profileUrl} />
+        <h1 className="center"> Your Photos </h1>
         <div className="photos-container">
-          
+          {this.props.ownPhotos.map(photo => (
+            <PhotosItem
+              key={photo.id}
+              photo={photo}
+              deletePhoto={this.props.deletePhoto}
+              currentUser={this.props.currentUser}
+            />
+          ))}
         </div>
       </div>
-    )
+    );
   }
-
 }
 
 export default OwnProfile;

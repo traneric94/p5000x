@@ -14,8 +14,9 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    puts params
     @user = User.find(params[:id])
-    @photos = Photo.find(author_id: @user.id)
+    @photos = Photo.find_by(author_id: @user.id)
   end
 
   def update

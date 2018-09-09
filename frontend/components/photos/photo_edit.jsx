@@ -21,7 +21,7 @@ class PhotoEdit extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.updatePhoto(formData, this.state.id)
+    this.props.updatePhoto(formData, this.state.id).then(() => location.reload())
 
   }
 
