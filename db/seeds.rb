@@ -1,12 +1,10 @@
-# User (username, password)
-# Photo (title, description, author_id)
-# Photo attach
 User.destroy_all
 Photo.destroy_all
 
-user0 = User.create!(username: "UserMcUserface", password: "password")
-user1 = User.create!(username: "@RealDonaldTrump", password: "password")
-user2 = User.create!(username: "MyLifeIsABeautifulDisaster", password: "password")
+user0 = User.new(username: "UserMcUserface", password: "password")
+user1 = User.new(username: "@RealDonaldTrump", password: "password")
+user2 = User.new(username: "LejonBrames", password: "password")
+user3 = User.new(username: "ZarkMuckerberg", password: "password")
 
 photo0 = Photo.new(
   title: "BØRNS",
@@ -89,8 +87,46 @@ photo14 = Photo.new(
   description: "",
   author_id: user0.id
 )
+photo15 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo16 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo17 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo18 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo19 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo20 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
+photo21 = Photo.new(
+  title: "",
+  description: "",
+  author_id: 
+)
 
-user0.image.attach()
+user0.image.attach(io: File.open("./app/assets/images/seedpics/pug.jpg"), filename: "pug.jpg")
+user1.image.attach(io: File.open("./app/assets/images/seedpics/trump.jpg"), filename: "trump.jpg")
+user2.image.attach(io: File.open("./app/assets/images/seedpics/lelbron.jpg"), filename: "lelbron.jpg")
+user3.image.attach(io: File.open("./app/assets/images/seedpics/zuck.jpg"), filename: "zuck.jpg")
 
 photo0.image.attach(io: File.open("./app/assets/images/seedpics/borns.jpg"), filename: "borns.jpg")
 photo1.image.attach(io: File.open("./app/assets/images/seedpics/monkey.jpg"), filename: "monkey.jpg")
@@ -108,6 +144,18 @@ photo11.image.attach(io: File.open("./app/assets/images/seedpics/banjo.jpg"), fi
 photo12.image.attach(io: File.open("./app/assets/images/seedpics/wood.jpg"), filename: "wood.jpg")
 photo13.image.attach(io: File.open("./app/assets/images/seedpics/dogg.jpg"), filename: "dogg.jpg")
 photo14.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo15.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo16.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo17.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo18.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo19.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo20.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+photo21.image.attach(io: File.open("./app/assets/images/seedpics/boys.jpg"), filename: "boys.jpg")
+
+user0.save!
+user1.save!
+user2.save!
+user3.save!
 
 photo0.save!
 photo1.save!

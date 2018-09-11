@@ -71,9 +71,7 @@ class PhotosItem extends React.Component {
         </div>
       )
     } else {
-      return (
-        <button className="action-button"> Like </button>
-      )
+      return (null)
     }
   }
 

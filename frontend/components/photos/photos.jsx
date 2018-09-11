@@ -11,27 +11,21 @@ class Photos extends React.Component {
     this.props.getPhotos();
   }
 
-  // checkPhotoCount() {
-  //   if (this.props.photos.filter((el) => (
-  //     el.author_id === this.props.currentUser.id)
-  //   ).length < 1 && this.currentUser && this.props.photos.length > 0) {
-  //     return(<h1> Add Some Photos! </h1>)
-  //   }
-  // }
-
-// Render filtering here, will need to refactor for scalalability,
-// but instant reload atm.
   render() {
     if (!this.props.currentUser) {
-      return (
-        <div className="splash">
-          <img className="background-image" src={window.background}></img>
+      return <div className="splash">
+          <img className="background-image" src={window.background} />
           <div className="greeting-message">
-            <h1> Welcome to 5000px </h1>
-            <Link id="entry-button" to="/signup">Sign Up</Link>
+            <h1>Inspire and share with the world's photographers</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <Link id="entry-button" to="/signup">
+              Sign Up
+            </Link>
           </div>
-        </div>
-      )
+        </div>;
     } else {
       return (
         <div className="photos-container">

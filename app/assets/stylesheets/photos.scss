@@ -85,8 +85,16 @@ textarea {
   text-shadow: 1px 1px #000000;
   border: 2px #F3EFE0;
   color: #F3EFE0;
-  padding: 10px 20px;
+  padding: 20px 80px;
+
+  width: 115px;
+  height: 25px;
+  background: rgb(0, 149, 233);
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+
   &:hover {
-    transform: scale(2) perspective(10px)
+    background: rgb(0, 166, 255)
   }
 }

@@ -12,7 +12,6 @@ class Profiles extends React.Component {
   }
 
   render() {
-    console.log(this)
     return (
       <div className="photos-container">
         {

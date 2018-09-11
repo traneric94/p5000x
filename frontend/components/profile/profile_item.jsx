@@ -37,7 +37,6 @@ class ProfileItem extends React.Component {
   }
 
   render() {
-    console.log(this)
     return (
       <div>
         <div className="profile-item-container" onClick={this.openModal}>
@@ -55,7 +54,6 @@ class ProfileItem extends React.Component {
           <br/>
           <img className="show-profile" src={this.props.user.profileUrl}/>
           <br/>
-          <button> Follow </button>
         </Modal>
       </div>
     )
