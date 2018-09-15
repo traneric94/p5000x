@@ -11,9 +11,20 @@ class OwnProfile extends React.Component {
   }
 
   render() {
-    console.log(this)
+
     return (
-      <div>
+      <div className="profile-container center">
+        <img className="default-profile" src={this.props.currentUser.profileUrl}/>
+        <div className="profile-information">
+          <ul>
+
+            <li><b>Username:</b>   {this.props.currentUser.username}</li>
+            <li><b>First Name:</b> {this.props.currentUser.fName}</li>
+            <li><b>Last Name:</b>  {this.props.currentUser.lName}</li>
+            <li><b>Email:</b>      {this.props.currentUser.email}</li>
+
+          </ul>
+        </div>
         
         <h1 className="center"> Your Photos </h1>
         <div className="photos-container">

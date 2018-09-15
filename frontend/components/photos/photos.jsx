@@ -6,7 +6,7 @@ class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: 'Search for photos, locations, or people'
+      search: ''
     };
   }
 
@@ -34,12 +34,17 @@ class Photos extends React.Component {
     } else {
       return (
         <div >
+          <form>
           <input 
             className="search-bar"
             type="text"
             value={this.state.search}
+            placeholder="Search for photos, people, or places"
             onChange={this.updateSearch.bind(this)}
           />
+          <input type="submit" name="" id="" value="search"/>
+
+          </form>
           <div className="photos-container">
             {
               this.props.photos.map(

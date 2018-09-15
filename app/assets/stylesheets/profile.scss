@@ -2,6 +2,9 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .center {
@@ -16,8 +19,17 @@
 
 .profile-item-container {
   text-align: center;
+
 }
 
+.profile-information {
+  display: inline-block;
+  ul li {
+    font-size: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+}
 .show-profile {
   width: 325px;
   height: 300px;
