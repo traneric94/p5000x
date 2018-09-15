@@ -15,8 +15,8 @@ const msp = state => {
     currentUser: state.session.currentUser,
     id: state.session.currentUser.id,
     user: state.entities.users[state.session.currentUser.id],
-    photos: Object.values(state.entities.photos),
-    ownPhotos: getOwnPhotos(state)
+    ownPhotos: getOwnPhotos(state),
+    state: state
   };
 }
 
@@ -25,6 +25,7 @@ const mdp = dispatch => ({
   getPhoto: (id) => dispatch(getPhoto(id)),
   updatePhoto: (photo) => dispatch(updatePhoto(photo)),
   deletePhoto: (id) => dispatch(deletePhoto(id)),
+  fetchUser: (id) => dispatch(fetchUser(id))
 });
 
 export default connect(msp, mdp)(OwnProfile);

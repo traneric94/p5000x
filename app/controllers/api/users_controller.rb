@@ -14,7 +14,6 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    puts params
     @user = User.find(params[:id])
     @photos = Photo.find_by(author_id: @user.id)
   end
@@ -35,7 +34,9 @@ class Api::UsersController < ApplicationController
       :username,
       :email,
       :password,
-      :image
+      :image,
+      :fName,
+      :lName
     )
   end
 
