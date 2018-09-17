@@ -33,11 +33,12 @@
 .button-primary {
   background-color: #34bf49;
   color: #fff;
-  padding: 14px 25px;
+  // padding: 14px 25px;
   text-align: center;
   display: inline-block;
   text-decoration: none;
-  height: 15px;
+  height: 20px;
+  padding: 20px 45px;
   &:hover {
     background-color: rgb(70, 205, 94)
   }
@@ -88,6 +89,7 @@
   border-radius: 50%;
   margin-top: 3.5px;
   display: inline;
+  padding-right: 20px;
 }
 
 .dropdown-button {

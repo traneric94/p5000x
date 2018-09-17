@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PhotosItem from './photos_item';
 
 class Photos extends React.Component {
@@ -19,6 +19,7 @@ class Photos extends React.Component {
   }
 
   render() {
+    console.log(this)
     if (!this.props.currentUser) {
       return <div className="splash">
           <img className="background-image" src={window.background} />
@@ -47,9 +48,9 @@ class Photos extends React.Component {
           <div className="photos-container">
             {
               this.props.photos.map(
-                (photo, i) => {
-                  if (this.props.currentUser && (this.props.location.pathname === "/" ||
-                    photo.author_id === this.props.currentUser.id)) {
+                (photo) => {
+                  if (this.props.currentUser && (this.props.location.pathname === "/" &&
+                    photo.author_id !== this.props.currentUser.id)) {
                     return  (
                       <PhotosItem
                         key={photo.id}

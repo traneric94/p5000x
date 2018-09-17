@@ -40,8 +40,8 @@ class PhotosItem extends React.Component {
     this.setState({ visible: false })
   }
 
-  renderEdit() {
 
+  renderEdit() {
     this.setState({ visible: !this.state.visible})
   }
 
@@ -58,6 +58,11 @@ class PhotosItem extends React.Component {
     )
   }
 
+  handleDelete() {
+    this.props.deletePhoto(this.props.photo.id);
+    this.props.childChange();
+  }
+
   renderButton() {
     if (this.props.currentUser.id === this.props.photo.author_id) {
       return (
@@ -66,8 +71,8 @@ class PhotosItem extends React.Component {
           <button
             className="action-button"
             id="delete"
-            onClick={() => this.props.deletePhoto(this.props.photo.id)
-            .then(() => location.reload())}>Delete</button>
+            onClick={this.handleDelete.bind(this)}>Delete
+            </button>
         </div>
       )
     } else {
@@ -76,6 +81,7 @@ class PhotosItem extends React.Component {
   }
 
   render() {
+    console.log(this)
     let display = this.state.visible ? (
       <div>
         <PhotoEditContainer photo={this.props.photo} />

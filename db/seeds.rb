@@ -364,6 +364,309 @@ photo15 = Photo.new(
    description: "We airdry our clothes",
    author_id: user18.id
  )
+photo60 = Photo.new(
+   title: "Night Reading",
+   description: "a 24 hour bookstore",
+   author_id: user1.id
+ )
+ photo61 = Photo.new(
+   title: "Floral Play",
+   description: "blooming",
+   author_id: user2.id
+ )
+ photo62 = Photo.new(
+   title: "MNGO",
+   description: "delicious cake",
+   author_id: user3.id
+ )
+ photo63 = Photo.new(
+   title: "Wet Fur",
+   description: "first time in the lake",
+   author_id: user5.id
+ )
+ photo64 = Photo.new(
+   title: "Stretching",
+   description: "how I end my day",
+   author_id: user4.id
+ )
+ photo65 = Photo.new(
+   title: "Seafood",
+   description: "butter and lemon please",
+   author_id: user6.id
+ )
+ photo66 = Photo.new(
+   title: "Katsu House",
+   description: "not the same as in Japan",
+   author_id: user0.id
+ )
+ photo67 = Photo.new(
+   title: "Morning Breakfast",
+   description: "stuffed from the eggs",
+   author_id: user7.id
+ )
+ photo68 = Photo.new(
+   title: "Chinatown",
+   description: "finally back",
+   author_id: user8.id
+ )
+ photo69 = Photo.new(
+   title: "Sneezing",
+   description: "poison damage",
+   author_id: user9.id
+ )
+ photo70 = Photo.new(
+   title: "Raise the Roof",
+   description: "0707",
+   author_id: user10.id
+ )
+ photo71 = Photo.new(
+   title: "Just You and Me",
+   description: "lights down low",
+   author_id: user11.id
+ )
+ photo72 = Photo.new(
+   title: "Redwoods",
+   description: "no small tree",
+   author_id: user12.id
+ )
+ photo73 = Photo.new(
+   title: "Zebra",
+   description: "best friend the bird",
+   author_id: user13.id
+ )
+ photo74 = Photo.new(
+   title: "Skater Boy",
+   description: "leaving Oasis",
+   author_id: user19.id
+ )
+ photo75 = Photo.new(
+   title: "With You",
+   description: "peace of mind",
+   author_id: user14.id
+ )
+ photo76 = Photo.new(
+   title: "Fully Fall",
+   description: "everything is orange",
+   author_id: user15.id
+ )
+ photo77 = Photo.new(
+   title: "Miami Fashion",
+   description: "she went back to school after",
+   author_id: user16.id
+ )
+ photo78 = Photo.new(
+   title: "Wake Up Call",
+   description: "I wanted to be early",
+   author_id: user17.id
+ )
+ photo79 = Photo.new(
+   title: "Road to Japan",
+   description: "The path everyone takes",
+   author_id: user18.id
+ )
+ 
+photo80 = Photo.new(
+   title: "Sorted Aisle",
+   description: "my city library",
+   author_id: user1.id
+ )
+ photo81 = Photo.new(
+   title: "At the Pier",
+   description: "the cleanest seat here",
+   author_id: user2.id
+ )
+ photo82 = Photo.new(
+   title: "Cookie Sandwich",
+   description: "with mint chip ice cream",
+   author_id: user3.id
+ )
+ photo83 = Photo.new(
+   title: "Muddy Fur",
+   description: "someone needs a bath",
+   author_id: user5.id
+ )
+ photo84 = Photo.new(
+   title: "Against the Wall",
+   description: "everyday is leg day",
+   author_id: user4.id
+ )
+ photo85 = Photo.new(
+   title: "In N Out",
+   description: "protein style please",
+   author_id: user6.id
+ )
+ photo86 = Photo.new(
+   title: "Heavenly Views",
+   description: "hit the top at noon",
+   author_id: user0.id
+ )
+ photo87 = Photo.new(
+   title: "Coffee and Egg Salad",
+   description: "the best cracked pepper",
+   author_id: user7.id
+ )
+ photo88 = Photo.new(
+   title: "Coffee Addict",
+   description: "but first coffee",
+   author_id: user8.id
+ )
+ photo89 = Photo.new(
+   title: "Heartbreak",
+   description: "charge your phone",
+   author_id: user9.id
+ )
+ photo90 = Photo.new(
+   title: "Small Crowds",
+   description: "but the best vibes",
+   author_id: user10.id
+ )
+ photo91 = Photo.new(
+   title: "Festivals",
+   description: "look at the lights",
+   author_id: user11.id
+ )
+ photo92 = Photo.new(
+   title: "Yosemite from the Road",
+   description: "a plesant drive",
+   author_id: user12.id
+ )
+ photo93 = Photo.new(
+   title: "Monkey",
+   description: "none of your business",
+   author_id: user13.id
+ )
+ photo94 = Photo.new(
+   title: "Rooftop View",
+   description: "no trespassing",
+   author_id: user19.id
+ )
+ photo95 = Photo.new(
+   title: "Coffee and Poetry",
+   description: "Release our thoughts",
+   author_id: user14.id
+ )
+ photo96 = Photo.new(
+   title: "A Single Leaf",
+   description: "trying to see the light",
+   author_id: user15.id
+ )
+ photo97 = Photo.new(
+   title: "Underground Fashion",
+   description: "the door is locked",
+   author_id: user16.id
+ )
+ photo98 = Photo.new(
+   title: "Train Across the US",
+   description: "everything is new and empty",
+   author_id: user17.id
+ )
+ photo99 = Photo.new(
+   title: "Supreme Store",
+   description: "Exclusive Japanese Apparel at Supreme",
+   author_id: user18.id
+ )
+ 
+photo100 = Photo.new(
+   title: "Some Old Short Stories",
+   description: "not sure who reads these still",
+   author_id: user1.id
+ )
+ photo101 = Photo.new(
+   title: "Still Waiting",
+   description: "for my coffee",
+   author_id: user2.id
+ )
+ photo102 = Photo.new(
+   title: "Mango times 3",
+   description: "everything tastes like mangos",
+   author_id: user3.id
+ )
+ photo103 = Photo.new(
+   title: "Cold Paws",
+   description: "first time seeing snow",
+   author_id: user5.id
+ )
+ photo104 = Photo.new(
+   title: "Jumprope",
+   description: "since I was a kid",
+   author_id: user4.id
+ )
+ photo105 = Photo.new(
+   title: "Korean Lunch",
+   description: "pass me the kimchi",
+   author_id: user6.id
+ )
+ photo106 = Photo.new(
+   title: "Berry Pancake",
+   description: "picked the berries myself",
+   author_id: user0.id
+ )
+ photo107 = Photo.new(
+   title: "Clean Sandwich",
+   description: "always add avocado",
+   author_id: user7.id
+ )
+ photo108 = Photo.new(
+   title: "Seize the Day",
+   description: "stared at the sun too long for this",
+   author_id: user8.id
+ )
+ photo109 = Photo.new(
+   title: "Say That Again",
+   description: "forgive me",
+   author_id: user9.id
+ )
+ photo110 = Photo.new(
+   title: "Silence",
+   description: "wait for the first string",
+   author_id: user10.id
+ )
+ photo111 = Photo.new(
+   title: "Neon Lights",
+   description: "peace love unity respect",
+   author_id: user11.id
+ )
+ photo112 = Photo.new(
+   title: "Barely Made It",
+   description: "woke up at 4 for this",
+   author_id: user12.id
+ )
+ photo113 = Photo.new(
+   title: "Couple of Antlers",
+   description: "feed them I dare you",
+   author_id: user13.id
+ )
+ photo114 = Photo.new(
+   title: "Great Heights",
+   description: "walk across the open bridge",
+   author_id: user19.id
+ )
+ photo115 = Photo.new(
+   title: "A Growing Quote",
+   description: "matching the moss",
+   author_id: user14.id
+ )
+ photo116 = Photo.new(
+   title: "Pile of Wood",
+   description: "storage for fall",
+   author_id: user15.id
+ )
+ photo117 = Photo.new(
+   title: "Life Rule",
+   description: "carry a backpack and wear a dress",
+   author_id: user16.id
+ )
+ photo118 = Photo.new(
+   title: "Flying Above Me",
+   description: "remember to travel more often",
+   author_id: user17.id
+ )
+ photo119 = Photo.new(
+   title: "Inside a Train",
+   description: "everything is quiet",
+   author_id: user18.id
+ )
+ 
  
 photo0.image.attach(io: File.open("./app/assets/images/seedpics/book1.jpg"), filename: "book1.jpg")
 photo1.image.attach(io: File.open("./app/assets/images/seedpics/fashion1.jpg"), filename: "fashion1.jpg")
@@ -425,6 +728,66 @@ photo56.image.attach(io: File.open("./app/assets/images/seedpics/seasons3.jpg"),
 photo57.image.attach(io: File.open("./app/assets/images/seedpics/streetwear3.jpg"), filename: "streetwear3.jpg")
 photo58.image.attach(io: File.open("./app/assets/images/seedpics/transportation3.jpg"), filename: "transportation3.jpg")
 photo59.image.attach(io: File.open("./app/assets/images/seedpics/travel3.jpg"), filename: "travel3.jpg")
+photo60.image.attach(io: File.open("./app/assets/images/seedpics/book4.jpg"), filename: "book4.jpg")
+photo61.image.attach(io: File.open("./app/assets/images/seedpics/fashion4.jpg"), filename: "fashion4.jpg")
+photo62.image.attach(io: File.open("./app/assets/images/seedpics/dessert4.jpg"), filename: "dessert4.jpg")
+photo63.image.attach(io: File.open("./app/assets/images/seedpics/dog4.jpg"), filename: "dog4.jpg")
+photo64.image.attach(io: File.open("./app/assets/images/seedpics/fitness4.jpg"), filename: "fitness4.jpg")
+photo65.image.attach(io: File.open("./app/assets/images/seedpics/foodie4.jpg"), filename: "foodie4.jpg")
+photo66.image.attach(io: File.open("./app/assets/images/seedpics/hawaii4.jpg"), filename: "hawaii4.jpg")
+photo67.image.attach(io: File.open("./app/assets/images/seedpics/healthy4.jpg"), filename: "healthy4.jpg")
+photo68.image.attach(io: File.open("./app/assets/images/seedpics/LA4.jpg"), filename: "LA4.jpg")
+photo69.image.attach(io: File.open("./app/assets/images/seedpics/meme4.jpg"), filename: "meme4.jpg")
+photo70.image.attach(io: File.open("./app/assets/images/seedpics/concert4.jpg"), filename: "concert4.jpg")
+photo71.image.attach(io: File.open("./app/assets/images/seedpics/festival4.jpg"), filename: "festival4.jpg")
+photo72.image.attach(io: File.open("./app/assets/images/seedpics/park4.jpg"), filename: "park4.jpg")
+photo73.image.attach(io: File.open("./app/assets/images/seedpics/wild4.jpg"), filename: "wild4.jpg")
+photo74.image.attach(io: File.open("./app/assets/images/seedpics/NY4.jpg"), filename: "NY4.jpg")
+photo75.image.attach(io: File.open("./app/assets/images/seedpics/quote4.jpg"), filename: "quote4.jpg")
+photo76.image.attach(io: File.open("./app/assets/images/seedpics/seasons4.jpg"), filename: "seasons4.jpg")
+photo77.image.attach(io: File.open("./app/assets/images/seedpics/streetwear4.jpg"), filename: "streetwear4.jpg")
+photo78.image.attach(io: File.open("./app/assets/images/seedpics/transportation4.jpg"), filename: "transportation4.jpg")
+photo79.image.attach(io: File.open("./app/assets/images/seedpics/travel4.jpg"), filename: "travel4.jpg")
+photo80.image.attach(io: File.open("./app/assets/images/seedpics/book5.jpg"), filename: "book5.jpg")
+photo81.image.attach(io: File.open("./app/assets/images/seedpics/fashion5.jpg"), filename: "fashion5.jpg")
+photo82.image.attach(io: File.open("./app/assets/images/seedpics/dessert5.jpg"), filename: "dessert5.jpg")
+photo83.image.attach(io: File.open("./app/assets/images/seedpics/dog5.jpg"), filename: "dog5.jpg")
+photo84.image.attach(io: File.open("./app/assets/images/seedpics/fitness5.jpg"), filename: "fitness5.jpg")
+photo85.image.attach(io: File.open("./app/assets/images/seedpics/foodie5.jpg"), filename: "foodie5.jpg")
+photo86.image.attach(io: File.open("./app/assets/images/seedpics/hawaii5.jpg"), filename: "hawaii5.jpg")
+photo87.image.attach(io: File.open("./app/assets/images/seedpics/healthy5.jpg"), filename: "healthy5.jpg")
+photo88.image.attach(io: File.open("./app/assets/images/seedpics/LA5.jpg"), filename: "LA5.jpg")
+photo89.image.attach(io: File.open("./app/assets/images/seedpics/meme5.jpg"), filename: "meme5.jpg")
+photo90.image.attach(io: File.open("./app/assets/images/seedpics/concert5.jpg"), filename: "concert5.jpg")
+photo91.image.attach(io: File.open("./app/assets/images/seedpics/festival5.jpg"), filename: "festival5.jpg")
+photo92.image.attach(io: File.open("./app/assets/images/seedpics/park5.jpg"), filename: "park5.jpg")
+photo93.image.attach(io: File.open("./app/assets/images/seedpics/wild5.jpg"), filename: "wild5.jpg")
+photo94.image.attach(io: File.open("./app/assets/images/seedpics/NY5.jpg"), filename: "NY5.jpg")
+photo95.image.attach(io: File.open("./app/assets/images/seedpics/quote5.jpg"), filename: "quote5.jpg")
+photo96.image.attach(io: File.open("./app/assets/images/seedpics/seasons5.jpg"), filename: "seasons5.jpg")
+photo97.image.attach(io: File.open("./app/assets/images/seedpics/streetwear5.jpg"), filename: "streetwear5.jpg")
+photo98.image.attach(io: File.open("./app/assets/images/seedpics/transportation5.jpg"), filename: "transportation5.jpg")
+photo99.image.attach(io: File.open("./app/assets/images/seedpics/travel5.jpg"), filename: "travel5.jpg")
+photo100.image.attach(io: File.open("./app/assets/images/seedpics/book6.jpg"), filename: "book6.jpg")
+photo101.image.attach(io: File.open("./app/assets/images/seedpics/fashion6.jpg"), filename: "fashion6.jpg")
+photo102.image.attach(io: File.open("./app/assets/images/seedpics/dessert6.jpg"), filename: "dessert6.jpg")
+photo103.image.attach(io: File.open("./app/assets/images/seedpics/dog6.jpg"), filename: "dog6.jpg")
+photo104.image.attach(io: File.open("./app/assets/images/seedpics/fitness6.jpg"), filename: "fitness6.jpg")
+photo105.image.attach(io: File.open("./app/assets/images/seedpics/foodie6.jpg"), filename: "foodie6.jpg")
+photo106.image.attach(io: File.open("./app/assets/images/seedpics/hawaii6.jpg"), filename: "hawaii6.jpg")
+photo107.image.attach(io: File.open("./app/assets/images/seedpics/healthy6.jpg"), filename: "healthy6.jpg")
+photo108.image.attach(io: File.open("./app/assets/images/seedpics/LA6.jpg"), filename: "LA6.jpg")
+photo109.image.attach(io: File.open("./app/assets/images/seedpics/meme6.jpg"), filename: "meme6.jpg")
+photo110.image.attach(io: File.open("./app/assets/images/seedpics/concert6.jpg"), filename: "concert6.jpg")
+photo111.image.attach(io: File.open("./app/assets/images/seedpics/festival6.jpg"), filename: "festival6.jpg")
+photo112.image.attach(io: File.open("./app/assets/images/seedpics/park6.jpg"), filename: "park6.jpg")
+photo113.image.attach(io: File.open("./app/assets/images/seedpics/wild6.jpg"), filename: "wild6.jpg")
+photo114.image.attach(io: File.open("./app/assets/images/seedpics/NY6.jpg"), filename: "NY6.jpg")
+photo115.image.attach(io: File.open("./app/assets/images/seedpics/quote6.jpg"), filename: "quote6.jpg")
+photo116.image.attach(io: File.open("./app/assets/images/seedpics/seasons6.jpg"), filename: "seasons6.jpg")
+photo117.image.attach(io: File.open("./app/assets/images/seedpics/streetwear6.jpg"), filename: "streetwear6.jpg")
+photo118.image.attach(io: File.open("./app/assets/images/seedpics/transportation6.jpg"), filename: "transportation6.jpg")
+photo119.image.attach(io: File.open("./app/assets/images/seedpics/travel6.jpg"), filename: "travel6.jpg")
  
 photo0.save!
 photo1.save!
@@ -486,3 +849,63 @@ photo56.save!
 photo57.save!
 photo58.save!
 photo59.save!
+photo60.save!
+photo61.save!
+photo62.save!
+photo63.save!
+photo64.save!
+photo65.save!
+photo66.save!
+photo67.save!
+photo68.save!
+photo69.save!
+photo70.save!
+photo71.save!
+photo72.save!
+photo73.save!
+photo74.save!
+photo75.save!
+photo76.save!
+photo77.save!
+photo78.save!
+photo79.save!
+photo80.save!
+photo81.save!
+photo82.save!
+photo83.save!
+photo84.save!
+photo85.save!
+photo86.save!
+photo87.save!
+photo88.save!
+photo89.save!
+photo90.save!
+photo91.save!
+photo92.save!
+photo93.save!
+photo94.save!
+photo95.save!
+photo96.save!
+photo97.save!
+photo98.save!
+photo99.save!
+photo100.save!
+photo101.save!
+photo102.save!
+photo103.save!
+photo104.save!
+photo105.save!
+photo106.save!
+photo107.save!
+photo108.save!
+photo109.save!
+photo110.save!
+photo111.save!
+photo112.save!
+photo113.save!
+photo114.save!
+photo115.save!
+photo116.save!
+photo117.save!
+photo118.save!
+photo119.save!

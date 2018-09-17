@@ -4,10 +4,18 @@ import ProfileItem from '../profile/profile_item';
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      detect: false
+    }
+    this.childChange.bind(this)
   } 
   
   componentDidMount() {
     this.props.getPhotos()
+  }
+
+  childChange() {
+    this.setState({ detect: !this.state.detect})
   }
 
   render() {
@@ -34,6 +42,7 @@ class OwnProfile extends React.Component {
               photo={photo}
               deletePhoto={this.props.deletePhoto}
               currentUser={this.props.currentUser}
+              childChange={this.childChange}
             />
           ))}
         </div>
