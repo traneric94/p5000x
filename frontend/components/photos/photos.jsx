@@ -34,7 +34,7 @@ class Photos extends React.Component {
     } else {
       return (
         <div >
-          <form>
+          {/* <form>
           <input 
             className="search-bar"
             type="text"
@@ -44,7 +44,7 @@ class Photos extends React.Component {
           />
           <input type="submit" name="" id="" value="search"/>
 
-          </form>
+          </form> */}
           <div className="photos-container">
             {
               this.props.photos.map(
