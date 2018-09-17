@@ -13,7 +13,8 @@ const msp = state => {
   return {
     currentUser: state.session.currentUser,
     photos: Object.values(state.entities.photos),
-    ownPhotos: () => getOwnPhotos(state)
+    ownPhotos: () => getOwnPhotos(state),
+    errors: state.errors
 
   };
 };

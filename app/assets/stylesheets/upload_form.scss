@@ -38,3 +38,7 @@ input {
 #main-upload {
   height: 50px;
 }
+
+#main-upload[disabled] {
+  background-color: #DCDAD1
+}

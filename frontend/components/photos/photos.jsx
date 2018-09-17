@@ -19,7 +19,6 @@ class Photos extends React.Component {
   }
 
   render() {
-    console.log(this)
     if (!this.props.currentUser) {
       return <div className="splash">
           <img className="background-image" src={window.background} />

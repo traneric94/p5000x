@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 class PhotoEdit extends React.Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class PhotoEdit extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log("oops")
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
@@ -21,7 +21,7 @@ class PhotoEdit extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.updatePhoto(formData, this.state.id).then(() => location.reload())
+    this.props.updatePhoto(formData, this.state.id).then(() => location.reload()).catch((err) => console.log("hello"))
 
   }
 
@@ -32,6 +32,23 @@ class PhotoEdit extends React.Component {
   handleFile(e) {
     this.state.preview = URL.createObjectURL(e.currentTarget.files[0])
     this.setState({ photoFile: e.currentTarget.files[0] })
+  }
+
+ renderErrors() {
+
+    if (this.props.errors.sessionErrors.length != 0) {
+      return (
+        <ul className="error-list">
+          {this.props.errors.sessionErrors.map((err, idx) => (
+            <li key={idx}>{ err }</li>
+          ))}
+        </ul>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 
   render() {

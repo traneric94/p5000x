@@ -8,13 +8,14 @@ class PhotoForm extends React.Component {
       title: "",
       photoFile: null,
       preview: null,
-      description: ""
+      description: "",
     }
 
     this.preview = null;
   }
 
   handleSubmit(e) {
+    console.log(this)
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
@@ -22,8 +23,7 @@ class PhotoForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.createPhoto(formData).then(() => location.reload());
-
+    this.props.createPhoto(formData)
   }
 
   update(field) {
@@ -35,7 +35,26 @@ class PhotoForm extends React.Component {
     this.setState({ photoFile: e.currentTarget.files[0] })
   }
 
+  renderErrors() {
+
+    if (this.props.errors.photoErrors && this.props.errors.photoErrors.length != 0) {
+      return (
+        <ul className="error-list">
+          {this.props.errors.photoErrors.map((err, idx) => (
+            <li key={idx}>{err}</li>
+          ))}
+        </ul>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
+  }
+
   render() {
+    const disabled = (this.state.photoFile == null || this.state.title == "")
+    console.log(this)
     return (
       <div>
         <form
@@ -50,6 +69,7 @@ class PhotoForm extends React.Component {
           <br/><br/>
           <img className="preview-pic" src={this.preview}/>
         </div>
+        {this.renderErrors()}
           <div className="input-details">
             <label> Title
               <br/>
@@ -72,7 +92,9 @@ class PhotoForm extends React.Component {
               id="main-upload"
               className="upload button-primary"
               type="submit"
-              value="Upload Photo"/>
+              value="Upload Photo"
+              disabled={(disabled) ? "disabled" : ""}
+              />
           </div>
         </form>
       </div>

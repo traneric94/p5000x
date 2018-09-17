@@ -8,41 +8,51 @@ export const REMOVE_PHOTO = "REMOVE_PHOTO";
 const receivePhotos = photos => ({ type: RECEIVE_PHOTOS, photos });
 const receivePhoto = photo => ({ type: RECEIVE_PHOTO, photo });
 const removePhoto = () => ({ type: REMOVE_PHOTO })
-
-
-export const receiveErrors = errors => ({ type: RECEIVE_PHOTO_ERRORS, errors });
-
+const receiveErrors = errors => ({
+  type: RECEIVE_PHOTO_ERRORS,
+  errors
+});
 export const getPhotos = () => dispatch => (
-  PhotoAPIUtil.getPhotos().then(
-    photos => (dispatch(receivePhotos(photos))),
-    err => (dispatch(receiveErrors(err.response.JSON)))
-  )
+  PhotoAPIUtil.getPhotos().then( 
+    photos => dispatch(receivePhotos(photos))
+    ),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )
 );
 
 export const getPhoto = (id) => dispatch => (
   PhotoAPIUtil.getPhoto(id).then(
-    photo => (dispatch(receivePhoto(photo))),
-    err => (dispatch(receiveErrors(err.response.JSON)))
-  )
+    photo => dispatch(receivePhoto(photo))
+    ),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )
 );
 
 export const createPhoto = (photo) => dispatch => (
   PhotoAPIUtil.createPhoto(photo).then(
-    photo => (dispatch(receivePhotos(photo))),
-    err => (dispatch(receiveErrors(err.response.JSON)))
-  )
+    photo => dispatch(receivePhotos(photo))
+    ),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )
 );
 
 export const updatePhoto = (photo) => dispatch => (
   PhotoAPIUtil.updatePhoto(photo).then(
-    photo => dispatch(receivePhoto(photo)),
-    err => (dispatch(receiveErrors(err.response.JSON)))
-  )
+    photo => dispatch(receivePhoto(photo))
+    ),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )
 );
 
 export const deletePhoto = (id) => dispatch => (
   PhotoAPIUtil.deletePhoto(id).then(
-    () => dispatch(removePhoto()),
-    err => (dispatch(receiveErrors(err.response.JSON)))
-  )
+    () => dispatch(removePhoto())
+    ),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )
 );

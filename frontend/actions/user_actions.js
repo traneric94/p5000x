@@ -14,10 +14,10 @@ const receiveUser = ({ user }) => ({
   user
 });
 
-const receiveUserErrors = errors => ({
-  type: RECEIVE_USER_ERRORS,
-  errors
-});
+// const receiveUserErrors = errors => ({
+//   type: RECEIVE_USER_ERRORS,
+//   errors
+// });
 
 export const fetchUsers = () => dispatch => (
   UserAPIUtil.getUsers()
