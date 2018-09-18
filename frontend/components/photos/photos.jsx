@@ -69,7 +69,7 @@ class Photos extends React.Component {
     if (this.props.loading) {
       return <LoadingIcon />;
     }
-    
+
     if (!this.props.currentUser) {
       return <div className="splash">
           <img className="background-image" src={window.background} />
@@ -95,6 +95,7 @@ class Photos extends React.Component {
           <input type="submit" name="" id="" value="search"/>
 
           </form> */}
+          <h1> Home Feed </h1>
           {this.renderPhotos()}
         </div>
       );
