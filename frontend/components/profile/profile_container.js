@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUser, fetchUsers} from '../../actions/user_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import Profiles from './profiles';
 import { getOtherUsers, getFollowedUsers } from '../../reducers/selectors';
 
@@ -8,6 +8,7 @@ const msp = state => {
     currentUser: state.session.currentUser,
     users: Object.values(state.entities.users),
     otherUsers: getOtherUsers(state),
+    loading: state.ui.loading.indexLoading,
     followedUsers: getFollowedUsers(state)
   };
 }

@@ -1,5 +1,5 @@
 import * as UserAPIUtil from '../util/user_util';
-
+import * as Loading from './loading_actions';
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
@@ -14,17 +14,14 @@ const receiveUser = ({ user }) => ({
   user
 });
 
-// const receiveUserErrors = errors => ({
-//   type: RECEIVE_USER_ERRORS,
-//   errors
-// });
+export const fetchUsers = () => dispatch => {
+  dispatch(Loading.startLoading());
 
-export const fetchUsers = () => dispatch => (
-  UserAPIUtil.getUsers()
+  return UserAPIUtil.getUsers()
   .then(users => (
     dispatch(receiveUsers(users))
   ))
-);
+};
 
 export const fetchUser = id => dispatch => (
   UserAPIUtil.getUser(id).then(user => dispatch(receiveUser(user)))

@@ -1,0 +1,11 @@
+.loading-container {
+    display: block;
+    text-align: center;
+    #load {
+        // position: absolute;
+        display:inline-block;
+        margin: 0 auto;
+        // margin: 0 auto;
+        width: 20em;
+    }
+}

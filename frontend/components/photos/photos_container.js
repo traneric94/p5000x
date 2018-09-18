@@ -15,6 +15,7 @@ const msp = (state, ownProps) => {
     photos: Object.values(state.entities.photos),
     ownPhotos: getOwnPhotos(state),
     errors: state.errors,
+    loading: state.ui.loading.indexLoading,
     ownProps
 
   };

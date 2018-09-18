@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotosItem from './photos_item';
-import { getOwnPhotos1 } from "../../reducers/selectors";
+import LoadingIcon from '../loading/loading_icon';
+import InfiniteScroll from "react-infinite-scroller";
 
 class Photos extends React.Component {
   constructor(props) {
@@ -26,12 +27,12 @@ class Photos extends React.Component {
   }
 
   renderPhotos() {
-    if (this.props.view == "profile" && this.props.photos.lenght > 0) {
-      const ownPhotos = getOwnPhotos1(this.props.photos, this.props.currentUser)
+
+    if (this.props.view == "profile" && this.props.photos.length > 0) {
       return (
         <div className="photos-container">
           {
-            ownPhotos.map(
+            this.props.ownPhotos.map(
               (photo) => {
                 return <PhotosItem key={photo.id} photo={photo} deletePhoto={this.props.deletePhoto} currentUser={this.props.currentUser} changeChild={this.changeChild} />;
               }
@@ -43,7 +44,7 @@ class Photos extends React.Component {
       return (
         <div className="photos-container">
           {
-            this.props.photos.map(
+            Object.values(this.props.photos).slice(120).map(
               (photo) => {
                 return (
                   <PhotosItem
@@ -62,9 +63,13 @@ class Photos extends React.Component {
     }
   }
 
-
   render() {
-    console.log(this)
+
+    // TODO { destructure} = this.props;
+    if (this.props.loading) {
+      return <LoadingIcon />;
+    }
+    
     if (!this.props.currentUser) {
       return <div className="splash">
           <img className="background-image" src={window.background} />

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import ProfileItem from './profile_item';
+import LoadingIcon from "../loading/loading_icon";
 
 class Profiles extends React.Component {
   constructor(props) {
@@ -12,6 +12,9 @@ class Profiles extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return <LoadingIcon />;
+    }
     return (
       <div className="photos-container">
         {
