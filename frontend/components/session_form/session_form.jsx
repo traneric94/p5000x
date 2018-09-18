@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
   loginWithDemo(event) {
     event.preventDefault();
     this.props.demoLogin({
-      username: "UserMcUserface",
+      username: "doggo",
       password: "password"
     })
   }
@@ -61,6 +61,27 @@ class SessionForm extends React.Component {
       );
     }
   }
+  checkEmail() {
+    if (this.props.formType !== "login") {
+      return <div>
+          <label>
+            Email
+            <br />
+            <input type="text" value={this.state.email} onChange={this.update("email")} className="session-input" />
+          </label>
+          <label>
+            First Name
+            <br />
+            <input type="text" value={this.state.fName} onChange={this.update("fName")} className="session-input" />
+          </label>
+          <label>
+            Last Name
+            <br />
+            <input type="text" value={this.state.lName} onChange={this.update("lName")} className="session-input" />
+          </label>
+        </div>;
+    } 
+  }
 
   render() {
     return (
@@ -80,17 +101,8 @@ class SessionForm extends React.Component {
                 onChange={this.update("username")}
                 className="session-input"/>
             </label>
+            {this.checkEmail()}
             <label>
-              Email
-              <br/>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="session-input"/>
-            </label>
-            <label>
-              <br/>
               Password
               <br/>
               <input

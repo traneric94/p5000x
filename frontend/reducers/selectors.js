@@ -3,6 +3,7 @@ export const getAllPhotos = ({ photos }) => (
 );
 
 export const getOwnPhotos = ({ entities, session }) => {
+  if (session.currentUser == null) return []
     let result = Object.values(entities.photos).filter(
       (photo) => {
         return photo.author_id == session.currentUser.id;

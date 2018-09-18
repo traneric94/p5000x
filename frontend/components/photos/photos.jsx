@@ -27,6 +27,7 @@ class Photos extends React.Component {
   }
 
   renderPhotos() {
+    if (this.props.currentUser == null) return null;
 
     if (this.props.view == "profile" && this.props.photos.length > 0) {
       return (
@@ -95,7 +96,6 @@ class Photos extends React.Component {
           <input type="submit" name="" id="" value="search"/>
 
           </form> */}
-          <h1> Home Feed </h1>
           {this.renderPhotos()}
         </div>
       );
