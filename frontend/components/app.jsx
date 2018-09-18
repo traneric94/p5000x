@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path='/' component={PhotosContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
-      <ProtectedRoute path='/yourphotos' component={PhotosContainer} />
+      {/* <ProtectedRoute path='/yourphotos' component={PhotosContainer} /> */}
       <ProtectedRoute path='/users' component={ProfileContainer}/>
       <ProtectedRoute path='/profile' component={OwnProfileContainer} />
     </Switch>

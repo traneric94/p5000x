@@ -12,8 +12,8 @@ class PhotoEdit extends React.Component {
     }
   }
 
-  handleSubmit(e) {
-    console.log("oops")
+  handleSubmit() {
+    console.log(this)
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
@@ -21,8 +21,8 @@ class PhotoEdit extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.updatePhoto(formData, this.state.id).then(() => location.reload()).catch((err) => console.log("hello"))
-
+    this.props.updatePhoto(formData);
+    this.props.closeModal();
   }
 
   update(field) {

@@ -10,13 +10,14 @@ import {
 
 import { getOwnPhotos } from '../../reducers/selectors';
 
-const msp = state => {
+
+const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     id: state.session.currentUser.id,
     user: state.entities.users[state.session.currentUser.id],
     ownPhotos: getOwnPhotos(state),
-    state: state
+    state: state,
   };
 }
 

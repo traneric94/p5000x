@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 class PhotoForm extends React.Component {
   constructor(props) {
@@ -14,8 +13,7 @@ class PhotoForm extends React.Component {
     this.preview = null;
   }
 
-  handleSubmit(e) {
-    console.log(this)
+  handleSubmit() {
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
@@ -23,7 +21,8 @@ class PhotoForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.createPhoto(formData)
+    this.props.createPhoto(formData);
+    this.props.closeModal();
   }
 
   update(field) {

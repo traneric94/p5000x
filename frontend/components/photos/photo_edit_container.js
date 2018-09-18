@@ -5,8 +5,7 @@ import PhotoEdit from './photo_edit';
 const msp = state => {
   return {
     currentUser: state.session.currentUser,
-    errors: state.errors
-
+    errors: state.errors,
   }
 }
 

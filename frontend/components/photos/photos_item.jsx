@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import Modal from 'react-modal';
-import PhotoFormContainer from '../photo_form/photo_form_container';
 import PhotoEditContainer from './photo_edit_container'
 
 const customStyles = {
@@ -40,7 +38,6 @@ class PhotosItem extends React.Component {
     this.setState({ visible: false })
   }
 
-
   renderEdit() {
     this.setState({ visible: !this.state.visible})
   }
@@ -59,8 +56,10 @@ class PhotosItem extends React.Component {
   }
 
   handleDelete() {
+    console.log(this.props.photo)
     this.props.deletePhoto(this.props.photo.id);
-    this.props.childChange();
+    this.props.changeChild();
+    this.closeModal();
   }
 
   renderButton() {
@@ -81,10 +80,12 @@ class PhotosItem extends React.Component {
   }
 
   render() {
-    console.log(this)
     let display = this.state.visible ? (
       <div>
-        <PhotoEditContainer photo={this.props.photo} />
+        <PhotoEditContainer 
+        photo={this.props.photo} 
+        closeModal={this.closeModal}
+        />
         {this.renderButton()}</div>
     ) : (
       <div className="show">

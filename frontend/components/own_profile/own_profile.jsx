@@ -1,25 +1,17 @@
 import React from 'react';
 import PhotosItem from '../photos/photos_item';
-import ProfileItem from '../profile/profile_item';
+import PhotosContainer from '../photos/photos_container';
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      detect: false
-    }
-    this.childChange.bind(this)
   } 
   
   componentDidMount() {
     this.props.getPhotos()
   }
 
-  childChange() {
-    this.setState({ detect: !this.state.detect})
-  }
-
   render() {
-
+    console.log(this)
     return (
       <div className="profile-container center">
         <img className="default-profile" src={this.props.currentUser.profileUrl}/>
@@ -35,17 +27,7 @@ class OwnProfile extends React.Component {
         </div>
         
         <h1 className="center"> Your Photos </h1>
-        <div className="photos-container">
-          {this.props.ownPhotos.map(photo => (
-            <PhotosItem
-              key={photo.id}
-              photo={photo}
-              deletePhoto={this.props.deletePhoto}
-              currentUser={this.props.currentUser}
-              childChange={this.childChange}
-            />
-          ))}
-        </div>
+        <PhotosContainer view="profile"/>
       </div>
     );
   }

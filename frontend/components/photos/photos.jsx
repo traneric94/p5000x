@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotosItem from './photos_item';
+import { getOwnPhotos1 } from "../../reducers/selectors";
 
 class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: false,
+      childChange: false
     };
+    this.changeChild = this.changeChild.bind(this)
+  }
+
+  changeChild() {
+    this.setState({ childChange: !this.state.childChange })
   }
 
   componentDidMount() {
@@ -17,6 +24,44 @@ class Photos extends React.Component {
   updateSearch(e) {
     this.setState({ search: e.target.value });
   }
+
+  renderPhotos() {
+    if (this.props.view == "profile" && this.props.photos.lenght > 0) {
+      const ownPhotos = getOwnPhotos1(this.props.photos, this.props.currentUser)
+      return (
+        <div className="photos-container">
+          {
+            ownPhotos.map(
+              (photo) => {
+                return <PhotosItem key={photo.id} photo={photo} deletePhoto={this.props.deletePhoto} currentUser={this.props.currentUser} changeChild={this.changeChild} />;
+              }
+            )
+          }
+        </div>
+      )
+    } else {
+      return (
+        <div className="photos-container">
+          {
+            this.props.photos.map(
+              (photo) => {
+                return (
+                  <PhotosItem
+                    key={photo.id}
+                    photo={photo}
+                    deletePhoto={this.props.deletePhoto}
+                    currentUser={this.props.currentUser}
+                    changeChild={this.changeChild}
+                  />
+                );
+              }
+            )
+          }
+        </div>
+      )
+    }
+  }
+
 
   render() {
     console.log(this)
@@ -45,27 +90,7 @@ class Photos extends React.Component {
           <input type="submit" name="" id="" value="search"/>
 
           </form> */}
-          <div className="photos-container">
-            {
-              this.props.photos.map(
-                (photo) => {
-                  if (this.props.currentUser && (this.props.location.pathname === "/" &&
-                    photo.author_id !== this.props.currentUser.id)) {
-                    return  (
-                      <PhotosItem
-                        key={photo.id}
-                        photo={ photo }
-                        deletePhoto={this.props.deletePhoto}
-                        currentUser={this.props.currentUser}
-                      />
-                    );
-                  } else {
-                    return null;
-                  }
-                }
-              )
-            }
-          </div>
+          {this.renderPhotos()}
         </div>
       );
     }
