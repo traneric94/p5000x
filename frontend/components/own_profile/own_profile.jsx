@@ -1,6 +1,6 @@
 import React from 'react';
-import PhotosItem from '../photos/photos_item';
 import PhotosContainer from '../photos/photos_container';
+import { timingSafeEqual } from 'crypto';
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -10,18 +10,25 @@ class OwnProfile extends React.Component {
     this.props.getPhotos()
   }
 
+  renderInfo() {
+    const info = { username, fName, lName, email } = this.props.currentUser;
+    info.values.map((el) => {
+      return <li>`#{el}`</li>
+    })
+  }
+
   render() {
-    console.log(this)
+    const { username, fName, lName, email } = this.props.currentUser;
     return (
       <div className="profile-container center">
         <img className="default-profile" src={this.props.currentUser.profileUrl}/>
         <div className="profile-information">
           <ul>
-
-            <li><b>Username:</b>   {this.props.currentUser.username}</li>
-            <li><b>First Name:</b> {this.props.currentUser.fName}</li>
-            <li><b>Last Name:</b>  {this.props.currentUser.lName}</li>
-            <li><b>Email:</b>      {this.props.currentUser.email}</li>
+        
+            <li><b>Username:</b>   {username}</li>
+            <li><b>First Name:</b> {fName}</li>
+            <li><b>Last Name:</b>  {lName}</li>
+            <li><b>Email:</b>      {email}</li>
 
           </ul>
         </div>

@@ -13,7 +13,6 @@ class PhotoEdit extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this)
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
@@ -52,6 +51,7 @@ class PhotoEdit extends React.Component {
   }
 
   render() {
+    const disabled = (this.state.title == "")
     return (
       <div>
         <form
@@ -84,7 +84,13 @@ class PhotoEdit extends React.Component {
             </label>
             <br/>
             <br/>
-            <input className="upload button-primary" type="submit" value="Update"/>
+            <input 
+            id="main-upload"
+            className="upload button-primary" 
+            type="submit" 
+            value="Update"
+            disabled={(disabled) ? "disabled" : ""}
+            />
           </div>
         </form>
       </div>

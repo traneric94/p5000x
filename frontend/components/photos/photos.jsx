@@ -26,42 +26,34 @@ class Photos extends React.Component {
     this.setState({ search: e.target.value });
   }
 
+
+
   renderPhotos() {
+    let photoArray = [];
+
     if (this.props.currentUser == null) return null;
 
-    if (this.props.view == "profile" && this.props.photos.length > 0) {
-      return (
-        <div className="photos-container">
-          {
-            this.props.ownPhotos.map(
-              (photo) => {
-                return <PhotosItem key={photo.id} photo={photo} deletePhoto={this.props.deletePhoto} currentUser={this.props.currentUser} changeChild={this.changeChild} />;
-              }
-            )
-          }
-        </div>
-      )
+    if (this.props.view == "profile") {
+      photoArray = this.props.ownPhotos;
     } else {
-      return (
-        <div className="photos-container">
-          {
-            Object.values(this.props.photos).slice(120).map(
-              (photo) => {
-                return (
-                  <PhotosItem
-                    key={photo.id}
-                    photo={photo}
-                    deletePhoto={this.props.deletePhoto}
-                    currentUser={this.props.currentUser}
-                    changeChild={this.changeChild}
-                  />
-                );
-              }
-            )
-          }
-        </div>
-      )
+      photoArray = this.props.otherPhotos.slice(95);
     }
+    return (
+      <div className="photos-container">
+        {
+          photoArray.map(
+            (photo) => {
+              return <PhotosItem 
+              key={photo.id} 
+              photo={photo} 
+              deletePhoto={this.props.deletePhoto} 
+              currentUser={this.props.currentUser} 
+              changeChild={this.changeChild} />;
+            }
+          )
+        }
+      </div>
+    )
   }
 
   render() {
@@ -96,6 +88,7 @@ class Photos extends React.Component {
           <input type="submit" name="" id="" value="search"/>
 
           </form> */}
+
           {this.renderPhotos()}
         </div>
       );

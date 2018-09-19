@@ -6,13 +6,13 @@ import {
   deletePhoto
 } from '../../actions/photo_actions';
 
-import { getOwnPhotos } from '../../reducers/selectors';
+import { getOwnPhotos, getOtherPhotos } from '../../reducers/selectors';
 import Photos from './photos';
 
 const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    photos: Object.values(state.entities.photos),
+    otherPhotos: getOtherPhotos(state),
     ownPhotos: getOwnPhotos(state),
     errors: state.errors,
     loading: state.ui.loading.indexLoading,

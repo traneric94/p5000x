@@ -1,5 +1,5 @@
 export const getAllPhotos = ({ photos }) => (
-  Object.keys(photos).map(id => photos[id])
+  Object.values(photos).map(id => photos[id])
 );
 
 export const getOwnPhotos = ({ entities, session }) => {
@@ -10,6 +10,15 @@ export const getOwnPhotos = ({ entities, session }) => {
       }
     )
     return result;
+}
+export const getOtherPhotos = ({ entities, session }) => {
+  if (session.currentUser == null) return []
+  let result = Object.values(entities.photos).filter(
+    (photo) => {
+      return photo.author_id !== session.currentUser.id;
+    }
+  )
+  return result;
 }
 
 export const getOtherUsers = ({ entities, session }) => {
