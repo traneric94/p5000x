@@ -36,7 +36,7 @@ class Photos extends React.Component {
     if (this.props.view == "profile") {
       photoArray = this.props.ownPhotos;
     } else {
-      photoArray = this.props.otherPhotos.slice(95);
+      photoArray = this.props.otherPhotos.slice(105);
     }
     return (
       <div className="photos-container">
