@@ -1,6 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { Switch, Route, Link, HashRouter, withRouter } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Modal from './modal/modal';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
@@ -23,7 +22,6 @@ const App = () => (
       <Route exact path='/' component={PhotosContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
-      {/* <ProtectedRoute path='/yourphotos' component={PhotosContainer} /> */}
       <ProtectedRoute path='/users' component={ProfileContainer}/>
       <ProtectedRoute path='/profile' component={OwnProfileContainer} />
     </Switch>

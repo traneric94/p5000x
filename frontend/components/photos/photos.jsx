@@ -48,7 +48,8 @@ class Photos extends React.Component {
               photo={photo} 
               deletePhoto={this.props.deletePhoto} 
               currentUser={this.props.currentUser} 
-              changeChild={this.changeChild} />;
+              changeChild={this.changeChild} 
+              />;
             }
           )
         }
@@ -58,7 +59,6 @@ class Photos extends React.Component {
 
   render() {
 
-    // TODO { destructure} = this.props;
     if (this.props.loading) {
       return <LoadingIcon />;
     }
