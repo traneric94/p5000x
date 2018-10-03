@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { logOut } from '../../actions/session_actions';
+import { logOut, receiveErrors } from '../../actions/session_actions';
 import Greeting from './greeting';
 import { withRouter } from 'react-router-dom';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   return {
@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => ({
   logOut: () => dispatch(logOut()),
-  openModal: (modal) => dispatch(openModal(modal))
+  openModal: (modal) => dispatch(openModal(modal)),
+  clearErrors: () => dispatch(receiveErrors([]))
 });
 
 export default withRouter(connect(msp, mdp)(Greeting));

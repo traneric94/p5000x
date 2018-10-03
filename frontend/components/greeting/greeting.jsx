@@ -2,28 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 
-const newSessionLinks = (currentUser, ownProps) => {
+const newSessionLinks = (currentUser, ownProps, clearErrors) => {
   let path = ownProps.location.pathname.slice(1);
-  if (path === "signup" && !currentUser) {
-  return (
-    <nav className="login-signup">
-      <Link className="button-primary" to="/login">Login</Link>
-    </nav>
-    )
-  } else if (path === "login" && !currentUser){
-    return (
-      <nav className="login-signup">
-        <Link className="button-primary" to="/signup">Sign Up</Link>
-      </nav>
-    )
-  } else if (path === "" && !currentUser) {
-    return (
-      <nav className="login-signup">
-        <Link className="button-primary" id="second-button" to="/login">Login</Link>
-        <Link className="button-primary" to="/signup">Sign Up</Link>
-    </nav>
-  )
+  if (!currentUser) {
+    if (path === "signup") {
+      return (
+        <nav className="login-signup">
+          <Link className="button-primary" to="/login" onClick={clearErrors}>Login</Link>
+        </nav>
+      )
+    } else if (path === "login") {
+      return (
+        <nav className="login-signup">
+          <Link className="button-primary" to="/signup" onClick={clearErrors}>Sign Up</Link>
+        </nav>
+      )
+    } else if (path === "") {
+      return (
+        <nav className="login-signup">
+          <Link className="button-primary" id="second-button" to="/login" onClick={clearErrors}>Login</Link>
+          <Link className="button-primary" to="/signup" onClick={clearErrors}>Sign Up</Link>
+        </nav>
+      )
+    }
   }
+  
 };
 
 const greeting = (currentUser, logOut, ownProps, openModal) => {
@@ -47,9 +50,9 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
     </div>
 )};
 
-const Greeting = ({ currentUser, logOut, ownProps, openModal}) => {
+const Greeting = ({ currentUser, logOut, ownProps, openModal, clearErrors}) => {
   return currentUser ? greeting(currentUser, logOut, ownProps, openModal) :
-  newSessionLinks(currentUser, ownProps)
+  newSessionLinks(currentUser, ownProps, clearErrors)
 };
 
 export default Greeting;

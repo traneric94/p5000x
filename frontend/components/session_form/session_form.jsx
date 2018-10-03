@@ -13,10 +13,6 @@ class SessionForm extends React.Component {
     this.loginWithDemo = this.loginWithDemo.bind(this);
   }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state
@@ -120,7 +116,7 @@ class SessionForm extends React.Component {
             />
             <button
               onClick={this.loginWithDemo}
-              className="button-primary mainButton"> DEMO LOGIN </button>
+              className="button-primary mainButton"> Demo Login </button>
           </div>
         </form>
       </div>
