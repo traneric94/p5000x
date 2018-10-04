@@ -4,8 +4,7 @@ import PhotoEditContainer from './photo_edit_container'
 
 const customStyles = {
   content : {
-    'height' : 'fit-content',
-    'width'  : 'fit-content',
+
     'margin' : 'auto',
   }
 };
@@ -58,7 +57,6 @@ class PhotosItem extends React.Component {
   handleDelete() {
     console.log(this.props.photo)
     this.props.deletePhoto(this.props.photo.id);
-    this.props.changeChild();
     this.closeModal();
   }
 

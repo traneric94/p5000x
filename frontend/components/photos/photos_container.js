@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { getOwnPhotos, getOtherPhotos } from "../../reducers/selectors";
+import Photos from "./photos";
 import {
   getPhotos,
   getPhoto,
@@ -6,17 +8,13 @@ import {
   deletePhoto
 } from '../../actions/photo_actions';
 
-import { getOwnPhotos, getOtherPhotos } from '../../reducers/selectors';
-import Photos from './photos';
-
 const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     otherPhotos: getOtherPhotos(state),
     ownPhotos: getOwnPhotos(state),
     errors: state.errors,
-    loading: state.ui.loading.indexLoading,
-    ownProps
+    loading: state.ui.loading.indexLoading
 
   };
 };

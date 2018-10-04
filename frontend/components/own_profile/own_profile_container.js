@@ -14,8 +14,7 @@ import { getOwnPhotos } from '../../reducers/selectors';
 const msp = (state) => {
   return {
     currentUser: state.session.currentUser,
-    id: state.session.currentUser.id,
-    user: state.entities.users[state.session.currentUser.id],
+    user: state.entities.users[state.session.currentUser],
     ownPhotos: getOwnPhotos(state),
   };
 }

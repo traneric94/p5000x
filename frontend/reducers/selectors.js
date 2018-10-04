@@ -20,15 +20,3 @@ export const getOtherPhotos = ({ entities, session }) => {
   )
   return result;
 }
-
-export const getOtherUsers = ({ entities, session }) => {
-  let result = Object.values(entities.users).filter((user) => {
-    return user.id != session.currentUser.id;
-  })
-  return result;
-}
-
-export const getFollowedUsers = (state) => {
-  let result = [];
-  return result;
-}

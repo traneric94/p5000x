@@ -7,26 +7,11 @@ import InfiniteScroll from "react-infinite-scroller";
 class Photos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      search: false,
-      childChange: false
-    };
-    this.changeChild = this.changeChild.bind(this)
-  }
-
-  changeChild() {
-    this.setState({ childChange: !this.state.childChange })
   }
 
   componentDidMount() {
     this.props.getPhotos();
   }
-
-  updateSearch(e) {
-    this.setState({ search: e.target.value });
-  }
-
-
 
   renderPhotos() {
     let photoArray = [];
@@ -35,8 +20,12 @@ class Photos extends React.Component {
 
     if (this.props.view == "profile") {
       photoArray = this.props.ownPhotos;
+    } else if (this.props.userId) {
+      photoArray = this.props.otherPhotos.filter((el) => {
+        el.author_id == this.props.userId;
+      });
     } else {
-      photoArray = this.props.otherPhotos.slice(105);
+      photoArray = this.props.otherPhotos.slice(50);
     }
     return (
       <div className="photos-container">
@@ -47,8 +36,7 @@ class Photos extends React.Component {
               key={photo.id} 
               photo={photo} 
               deletePhoto={this.props.deletePhoto} 
-              currentUser={this.props.currentUser} 
-              changeChild={this.changeChild} 
+              currentUser={this.props.currentUser}
               />;
             }
           )
@@ -77,18 +65,6 @@ class Photos extends React.Component {
     } else {
       return (
         <div >
-          {/* <form>
-          <input 
-            className="search-bar"
-            type="text"
-            value={this.state.search}
-            placeholder="Search for photos, people, or places"
-            onChange={this.updateSearch.bind(this)}
-          />
-          <input type="submit" name="" id="" value="search"/>
-
-          </form> */}
-
           {this.renderPhotos()}
         </div>
       );

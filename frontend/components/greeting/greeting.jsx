@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 
-const newSessionLinks = (currentUser, ownProps, clearErrors) => {
-  let path = ownProps.location.pathname.slice(1);
+const newSessionLinks = ({currentUser, ownProps, clearErrors}) => {
+  const path = ownProps.location.pathname.slice(1);
   if (!currentUser) {
     if (path === "signup") {
       return (
@@ -29,7 +29,7 @@ const newSessionLinks = (currentUser, ownProps, clearErrors) => {
   
 };
 
-const greeting = (currentUser, logOut, ownProps, openModal) => {
+const greeting = ({currentUser, logOut, ownProps, openModal}) => {
   return (
     <div className="nav-right">
       <hgroup className="dropdown">
@@ -50,9 +50,7 @@ const greeting = (currentUser, logOut, ownProps, openModal) => {
     </div>
 )};
 
-const Greeting = ({ currentUser, logOut, ownProps, openModal, clearErrors}) => {
-  return currentUser ? greeting(currentUser, logOut, ownProps, openModal) :
-  newSessionLinks(currentUser, ownProps, clearErrors)
+const Greeting = (state) => {
+  return state.currentUser ? greeting(state) : newSessionLinks(state)
 };
-
 export default Greeting;

@@ -38,13 +38,16 @@ class OwnProfile extends React.Component {
   // }
 
   render() {
+    console.log("hello", this.props.currentUser);
     const {
+      id,
       username,
       fName,
       lName,
       email,
       profileUrl
     } = this.props.currentUser;
+
     return (
     <div className="profile-container center">
         <img className="default-profile" src={profileUrl} onClick={this.openModal} />
@@ -65,7 +68,7 @@ class OwnProfile extends React.Component {
           </ul>
         </div>
         <h1 className="center"> Your Photos </h1>
-        <PhotosContainer view="profile" />
+        <PhotosContainer view="profile" userid={id} />
       </div>
     );
   }
