@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
 
 const newSessionLinks = ({currentUser, ownProps, clearErrors}) => {
   const path = ownProps.location.pathname.slice(1);
@@ -8,20 +7,20 @@ const newSessionLinks = ({currentUser, ownProps, clearErrors}) => {
     if (path === "signup") {
       return (
         <nav className="login-signup">
-          <Link className="button-primary" to="/login" onClick={clearErrors}>Login</Link>
+          <Link className="button-primary" to="/login">Login</Link>
         </nav>
       )
     } else if (path === "login") {
       return (
         <nav className="login-signup">
-          <Link className="button-primary" to="/signup" onClick={clearErrors}>Sign Up</Link>
+          <Link className="button-primary" to="/signup">Sign Up</Link>
         </nav>
       )
     } else if (path === "") {
       return (
         <nav className="login-signup">
-          <Link className="button-primary" id="second-button" to="/login" onClick={clearErrors}>Login</Link>
-          <Link className="button-primary" to="/signup" onClick={clearErrors}>Sign Up</Link>
+          <Link className="button-primary" id="second-button" to="/login">Login</Link>
+          <Link className="button-primary" to="/signup">Sign Up</Link>
         </nav>
       )
     }

@@ -23,7 +23,7 @@
 }
 
 
-.session-inputs {
+.session-input-container {
   display: inline;
   font-style: inherit;
   font-size: 14px;
@@ -42,6 +42,16 @@
   padding: 8px 10px;
   color: #525558;
   border: 1px solid rgba(185, 193, 199, 0.5);
+}
+
+.err {
+  animation-name: flash;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+@keyframes flash {
+  from { border: 1px solid rgba(185, 193, 199, 0.5);}
+  to {border: 1px solid red }
 }
 
 .error-list {

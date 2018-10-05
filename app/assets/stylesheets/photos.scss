@@ -73,13 +73,17 @@ textarea {
   background-color: red;
 }
 
-.greeting-message {
+.greeting-message-container {
   position: absolute;
   text-shadow: 1px 1px #000000;
   color: #F3EFE0;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.greeting-message {
+  margin-bottom: 100px;
 }
 
 #entry-button {

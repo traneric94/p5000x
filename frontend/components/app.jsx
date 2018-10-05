@@ -7,25 +7,27 @@ import PhotosContainer from './photos/photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from './profile/profile_container';
 import OwnProfileContainer from './own_profile/own_profile_container';
+import SplashContainer from './splash/splash_container';
 
 const App = () => (
   <div>
     <Modal />
-    <header>
-      <h1 className="nav-bar">
+      <div className="nav-bar">
         <Link to='/'><img id="logo" src={window.logo} /></Link>
         <GreetingContainer />
-      </h1>
-    </header>
+      </div>
+
+    <AuthRoute path='/login' component={SessionFormContainer} />
+    <AuthRoute path='/signup' component={SessionFormContainer} />
+    <AuthRoute exact path='/' component={SplashContainer} />
+
 
     <Switch>
-      <Route exact path='/' component={PhotosContainer} />
-      <AuthRoute path='/login' component={SessionFormContainer} />
-      <AuthRoute path='/signup' component={SessionFormContainer} />
+      <ProtectedRoute exact path='/dashboard' component={PhotosContainer} />
       <ProtectedRoute path='/users' component={ProfileContainer}/>
+      <ProtectedRoute path='/users/:username' component={ProfileContainer}/>
       <ProtectedRoute path='/profile' component={OwnProfileContainer} />
     </Switch>
-
   </div>
 );
 

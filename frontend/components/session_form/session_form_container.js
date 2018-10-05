@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
-import { logIn, signUp, receiveErrors } from '../../actions/session_actions';
+import { 
+  logIn, 
+  signUp, 
+  removeSessionErrors 
+} from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const msp = (state, ownProps) => {
   const formType = ownProps.location.pathname.slice(1)
   return {
-    loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors,
+    errors: state.errors.sessionErrors,
     formType
   }
 };
@@ -16,7 +19,7 @@ const mdp = (dispatch, ownProps)  => {
   const processForm = (formType === 'login') ? logIn : signUp;
   return {
     processForm: user => dispatch(processForm(user)),
-    clearErrors: () => dispatch(receiveErrors([])),
+    clearSessionErrors: () => dispatch(removeSessionErrors()),
     demoLogin: user => dispatch(logIn(user))
   };
 };

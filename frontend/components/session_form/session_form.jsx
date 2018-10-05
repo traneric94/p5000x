@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,9 +7,22 @@ class SessionForm extends React.Component {
       username: '',
       password: ''
     };
+
+    this.errors = { user: false, pass: false }
     this.status = ""
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginWithDemo = this.loginWithDemo.bind(this);
+  }
+  
+  componentDidMount() {
+    console.log("Component Mounted");
+    this.props.clearSessionErrors();
+    this.errors.user = false;
+    this.errors.pass = false
+  }
+  
+  componentDidUpdate() {
+    console.log("Component Updated");
   }
 
   handleSubmit(event) {
@@ -42,38 +54,57 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-
-    if (this.props.errors.sessionErrors.length != 0) {
-      return (
+        return (
         <ul className="error-list">
-          {this.props.errors.sessionErrors.map((err, idx) => (
-            <li key={idx}>{ err }</li>
-          ))}
+          {
+            (this.props.errors.length != 0) ? (
+             this.props.errors.map((err, idx) => {
+              if (err.includes("name")) {
+                this.errors.user = true
+              }
+              if (err.includes("word")) {
+                this.errors.pass = true
+              }
+              return <li key={idx}>{ err }</li>
+            })
+            ) : (null)
+          }
         </ul>
       );
-    } else {
-      return (
-        <div></div>
-      );
-    }
   }
-  checkEmail() {
+
+  addExtraFormElements() {
     if (this.props.formType !== "login") {
       return <div>
           <label>
             Email
             <br />
-            <input type="text" value={this.state.email} onChange={this.update("email")} className="session-input" />
+            <input 
+              type="text" 
+              value={this.state.email} 
+              onChange={this.update("email")} 
+              className="session-input"
+            />
           </label>
           <label>
             First Name
             <br />
-            <input type="text" value={this.state.fName} onChange={this.update("fName")} className="session-input" />
+            <input 
+              type="text" 
+              value={this.state.fName} 
+              onChange={this.update("fName")} 
+              className="session-input"
+            />
           </label>
           <label>
             Last Name
             <br />
-            <input type="text" value={this.state.lName} onChange={this.update("lName")} className="session-input" />
+            <input 
+              type="text" 
+              value={this.state.lName} 
+              onChange={this.update("lName")} 
+              className="session-input"
+            />
           </label>
         </div>;
     } 
@@ -88,6 +119,7 @@ class SessionForm extends React.Component {
           <div id="status" >{this.status}</div>
           {this.renderErrors()}
           <div className="session-inputs">
+            {this.addExtraFormElements()}
             <label>
               Username
               <br/>
@@ -95,9 +127,11 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
-                className="session-input"/>
+                className={'session-input ' + (this.errors.user ? 'err' :'')}
+                autoComplete="true"
+                autoFocus
+                />
             </label>
-            {this.checkEmail()}
             <label>
               Password
               <br/>
@@ -105,7 +139,7 @@ class SessionForm extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="session-input"
+                className={'session-input ' + (this.errors.pass ? 'err' :'')}
               />
             </label>
             <br/>

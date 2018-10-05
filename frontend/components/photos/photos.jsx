@@ -51,18 +51,7 @@ class Photos extends React.Component {
       return <LoadingIcon />;
     }
 
-    if (!this.props.currentUser) {
-      return <div className="splash">
-          <img className="background-image" src={window.background} />
-          <div className="greeting-message">
-            <h1>Inspire and share with the world's photographers</h1>
-            <br/><br/><br/><br/>
-            <Link id="entry-button" to="/signup">
-              Sign Up
-            </Link>
-          </div>
-        </div>;
-    } else {
+    if (this.props.currentUser) {
       return (
         <div >
           {this.renderPhotos()}
