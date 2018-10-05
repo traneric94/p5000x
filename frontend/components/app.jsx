@@ -17,13 +17,12 @@ const App = () => (
         <GreetingContainer />
       </div>
 
-    <AuthRoute path='/login' component={SessionFormContainer} />
-    <AuthRoute path='/signup' component={SessionFormContainer} />
-    <AuthRoute exact path='/' component={SplashContainer} />
-
 
     <Switch>
-      <ProtectedRoute exact path='/dashboard' component={PhotosContainer} />
+      <AuthRoute path='/login' component={SessionFormContainer} />
+      <AuthRoute path='/signup' component={SessionFormContainer} />
+      <AuthRoute exact path='/' component={SplashContainer} />
+      <ProtectedRoute exact path='/feed' component={PhotosContainer} />
       <ProtectedRoute path='/users' component={ProfileContainer}/>
       <ProtectedRoute path='/users/:username' component={ProfileContainer}/>
       <ProtectedRoute path='/profile' component={OwnProfileContainer} />

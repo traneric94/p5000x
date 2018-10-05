@@ -9,34 +9,29 @@ class SessionForm extends React.Component {
     };
 
     this.errors = { user: false, pass: false }
-    this.status = ""
+    this.status = ''
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginWithDemo = this.loginWithDemo.bind(this);
   }
   
   componentDidMount() {
-    console.log("Component Mounted");
     this.props.clearSessionErrors();
     this.errors.user = false;
     this.errors.pass = false
   }
   
-  componentDidUpdate() {
-    console.log("Component Updated");
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => this.props.history.push('/feed'));
   }
 
   loginWithDemo(event) {
     event.preventDefault();
     this.props.demoLogin({
-      username: "doggo",
-      password: "password"
-    })
+      username: 'doggo',
+      password: 'password'
+    }).then(() => this.props.history.push('/feed'));
   }
 
   update(field) {
@@ -44,25 +39,25 @@ class SessionForm extends React.Component {
   }
 
   toggleSignInSignUp() {
-    if (this.props.formType === "login") {
-      this.status = "Log In to p5000x";
-      this.buttonStatus = "Log In";
+    if (this.props.formType === 'login') {
+      this.status = 'Log In to p5000x';
+      this.buttonStatus = 'Log In';
     } else {
-      this.status = "Join p5000x";
-      this.buttonStatus = "Sign Up";
+      this.status = 'Join p5000x';
+      this.buttonStatus = 'Sign Up';
     }
   }
 
   renderErrors() {
         return (
-        <ul className="error-list">
+        <ul className='error-list'>
           {
             (this.props.errors.length != 0) ? (
              this.props.errors.map((err, idx) => {
-              if (err.includes("name")) {
+              if (err.includes('name')) {
                 this.errors.user = true
               }
-              if (err.includes("word")) {
+              if (err.includes('word')) {
                 this.errors.pass = true
               }
               return <li key={idx}>{ err }</li>
@@ -74,36 +69,36 @@ class SessionForm extends React.Component {
   }
 
   addExtraFormElements() {
-    if (this.props.formType !== "login") {
+    if (this.props.formType !== 'login') {
       return <div>
           <label>
             Email
             <br />
             <input 
-              type="text" 
+              type='text' 
               value={this.state.email} 
-              onChange={this.update("email")} 
-              className="session-input"
+              onChange={this.update('email')} 
+              className='session-input'
             />
           </label>
           <label>
             First Name
             <br />
             <input 
-              type="text" 
+              type='text' 
               value={this.state.fName} 
-              onChange={this.update("fName")} 
-              className="session-input"
+              onChange={this.update('fName')} 
+              className='session-input'
             />
           </label>
           <label>
             Last Name
             <br />
             <input 
-              type="text" 
+              type='text' 
               value={this.state.lName} 
-              onChange={this.update("lName")} 
-              className="session-input"
+              onChange={this.update('lName')} 
+              className='session-input'
             />
           </label>
         </div>;
@@ -112,23 +107,23 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-container">
+      <div className='session-container'>
         <br/>
-        <form className ="session-form" onSubmit={this.handleSubmit}>
+        <form className ='session-form' onSubmit={this.handleSubmit}>
           {this.toggleSignInSignUp()}
-          <div id="status" >{this.status}</div>
+          <div id='status' >{this.status}</div>
           {this.renderErrors()}
-          <div className="session-inputs">
+          <div className='session-inputs'>
             {this.addExtraFormElements()}
             <label>
               Username
               <br/>
               <input
-                type="text"
+                type='text'
                 value={this.state.username}
-                onChange={this.update("username")}
+                onChange={this.update('username')}
                 className={'session-input ' + (this.errors.user ? 'err' :'')}
-                autoComplete="true"
+                autoComplete='true'
                 autoFocus
                 />
             </label>
@@ -136,21 +131,21 @@ class SessionForm extends React.Component {
               Password
               <br/>
               <input
-                type="password"
+                type='password'
                 value={this.state.password}
-                onChange={this.update("password")}
+                onChange={this.update('password')}
                 className={'session-input ' + (this.errors.pass ? 'err' :'')}
               />
             </label>
             <br/>
             <input
-              className="button-primary mainButton"
-              type="submit"
+              className='button-primary mainButton'
+              type='submit'
               value={this.buttonStatus}
             />
             <button
               onClick={this.loginWithDemo}
-              className="button-primary mainButton"> Demo Login </button>
+              className='button-primary mainButton'> Demo Login </button>
           </div>
         </form>
       </div>

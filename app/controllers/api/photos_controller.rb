@@ -36,6 +36,10 @@ class Api::PhotosController < ApplicationController
     (render json: ['Photo does not exist'], status: 410)
   end
 
+  def feed
+    @photos = Photo.all
+  end
+
   private
 
   def photo_params

@@ -50,6 +50,8 @@ const greeting = ({currentUser, logOut, ownProps, openModal}) => {
 )};
 
 const Greeting = (state) => {
+  console.log("greeting current user state", state)
+  console.log(Boolean(state.currentUser))
   return state.currentUser ? greeting(state) : newSessionLinks(state)
 };
 export default Greeting;
