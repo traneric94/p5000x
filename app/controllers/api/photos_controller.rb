@@ -1,7 +1,10 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.all
+    p "HELLO"
+    @photos = Photo.all.page(params[:page]).per(10)
+    p @photos
+    p "HI"
   end
 
   def create
@@ -37,7 +40,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def feed
-    @photos = Photo.all
+    @photos = Photo.all.page(params[:page]).per(10)
   end
 
   private

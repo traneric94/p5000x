@@ -12,10 +12,10 @@ const receiveErrors = errors => ({ type: RECEIVE_PHOTO_ERRORS, errors });
 
 
 
-export const getPhotos = () => dispatch => {
+export const getPhotos = (page) => dispatch => {
   dispatch(Loading.startLoading());
   
-  return PhotoAPIUtil.getPhotos().then( 
+  return PhotoAPIUtil.getPhotos(page).then( 
     photos => dispatch(receivePhotos(photos))
     ),
     err => (

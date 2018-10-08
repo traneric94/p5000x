@@ -1,22 +1,32 @@
 import React from 'react';
 import PhotosItem from './photos_item';
 import LoadingIcon from '../loading/loading_icon';
+import Waypoint from 'react-waypoint';
 
 class Photos extends React.Component {
   constructor(props) {
     super(props);
- 
+    this.state = {
+      page: 1
+    };
+    this.getMorePhotos = this.getMorePhotos.bind(this);
   }
 
   componentDidMount() {
-    this.props.getPhotos();
+    this.props.getPhotos(this.state.page);
+  }
+
+  getMorePhotos() {
+    console.log(this.state)
+    this.props.getPhotos(this.state.page);
+    this.setState({ page: this.state.page + 1})
   }
 
   renderPhotos() {
-
     const {ownPhotos, otherPhotos, deletePhoto, currentUser} = this.props;
     if (this.props.currentUser == null) return null;
-    let photoArray = this.props.userId != undefined ? ownPhotos : otherPhotos.slice(110)
+    let photoArray = this.props.userId != undefined ? ownPhotos : otherPhotos
+    console.log("photoArray", photoArray)
     return (
         <div className="photos-container">
           {
@@ -31,6 +41,7 @@ class Photos extends React.Component {
               }
             )
           }
+        <Waypoint onEnter={this.getMorePhotos} />
         </div>
     )
   }
@@ -47,6 +58,7 @@ class Photos extends React.Component {
         <div>
           {this.renderPhotos()}
           {this.renderLoad()}
+          
         </div>
       );
     }

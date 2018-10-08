@@ -20,7 +20,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-  getPhotos: () => dispatch(getPhotos()),
+  getPhotos: (page) => dispatch(getPhotos(page)),
   getPhoto: (id) => dispatch(getPhoto(id)),
   updatePhoto: (photo) => dispatch(updatePhoto(photo)),
   deletePhoto: (id) => dispatch(deletePhoto(id))

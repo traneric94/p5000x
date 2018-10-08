@@ -6,10 +6,13 @@ import {
  import merge from 'lodash/merge';
 
 const photosReducer = (state = {}, action ) => {
+  console.log("state", state)
+  console.log("action", action)
     Object.freeze(state);
     switch(action.type) {
       case RECEIVE_PHOTOS:
-        return action.photos;
+        let returnState = merge({}, state, action.photos)
+        return returnState;
       case RECEIVE_PHOTO:
         return merge({}, state, action.photo)
       case REMOVE_PHOTO:

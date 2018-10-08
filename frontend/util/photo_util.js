@@ -1,8 +1,8 @@
-export const getPhotos = () => (
+export const getPhotos = (page) => (
   $.ajax({
     method: 'GET',
     url: `/api/photos`,
-
+    data: { page } 
   })
 );
 
