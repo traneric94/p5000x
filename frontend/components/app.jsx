@@ -5,27 +5,27 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import PhotosContainer from './photos/photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import ProfileContainer from './profile/profile_container';
+import ProfileContainer from './profiles/profile_container';
 import OwnProfileContainer from './own_profile/own_profile_container';
 import SplashContainer from './splash/splash_container';
 
 const App = () => (
   <div>
     <Modal />
-      <div className="nav-bar">
-        <Link to='/'><img id="logo" src={window.logo} /></Link>
-        <GreetingContainer />
-      </div>
-
+    <div className="nav-bar">
+      <Link to="/feed">
+        <img id="logo" src={window.logo} />
+      </Link>
+      <GreetingContainer />
+    </div>
 
     <Switch>
-      <AuthRoute path='/login' component={SessionFormContainer} />
-      <AuthRoute path='/signup' component={SessionFormContainer} />
-      <AuthRoute exact path='/' component={SplashContainer} />
-      <ProtectedRoute exact path='/feed' component={PhotosContainer} />
-      <ProtectedRoute path='/users' component={ProfileContainer}/>
-      <ProtectedRoute path='/users/:username' component={ProfileContainer}/>
-      <ProtectedRoute path='/profile' component={OwnProfileContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute exact path="/" component={SplashContainer} />
+      <ProtectedRoute exact path="/feed" component={PhotosContainer} />
+      <ProtectedRoute path="/users" component={ProfileContainer} />
+      <ProtectedRoute path="/:username" component={OwnProfileContainer} />
     </Switch>
   </div>
 );

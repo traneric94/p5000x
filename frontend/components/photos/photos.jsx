@@ -14,19 +14,10 @@ class Photos extends React.Component {
   }
 
   renderPhotos() {
-    let photoArray = [];
-
+    const {ownPhotos, otherPhotos, deletePhoto, currentUser} = this.props;
     if (this.props.currentUser == null) return null;
+    let photoArray = this.props.userId != undefined ? ownPhotos : otherPhotos.slice(50)
 
-    if (this.props.view == "profile") {
-      photoArray = this.props.ownPhotos;
-    } else if (this.props.userId) {
-      photoArray = this.props.otherPhotos.filter((el) => {
-        el.author_id == this.props.userId;
-      });
-    } else {
-      photoArray = this.props.otherPhotos.slice(50);
-    }
     return (
       <div className="photos-container">
         {
@@ -35,8 +26,8 @@ class Photos extends React.Component {
               return <PhotosItem 
               key={photo.id} 
               photo={photo} 
-              deletePhoto={this.props.deletePhoto} 
-              currentUser={this.props.currentUser}
+              deletePhoto={deletePhoto} 
+              currentUser={currentUser}
               />;
             }
           )

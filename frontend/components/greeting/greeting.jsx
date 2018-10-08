@@ -34,7 +34,7 @@ const greeting = ({currentUser, logOut, ownProps, openModal}) => {
       <hgroup className="dropdown">
           <img className="profile-pic" src={currentUser.profileUrl}/>
           <ul className="nav-header-dropdown">
-            <li><Link to="/profile" className="dropdown-button" >Profile</Link></li>
+            <li><Link to={`/${currentUser.username}`} className="dropdown-button" >Profile</Link></li>
             <li><Link to="/users" className="dropdown-button" >Users</Link></li>
             <li><Link className="dropdown-button"
               onClick={logOut}
@@ -50,8 +50,6 @@ const greeting = ({currentUser, logOut, ownProps, openModal}) => {
 )};
 
 const Greeting = (state) => {
-  console.log("greeting current user state", state)
-  console.log(Boolean(state.currentUser))
   return state.currentUser ? greeting(state) : newSessionLinks(state)
 };
 export default Greeting;

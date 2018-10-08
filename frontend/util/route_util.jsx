@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, HashRouter, withRouter, Redirect } from 'react-router-dom';
+import { Route, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // If not logged in, redirect to splash
@@ -12,7 +12,6 @@ const Auth = ({component: Component, path, loggedIn, exact }) => (
     }
   />
 );
-
 
 //If logged in, render component, else redirect to signup
 const Protected = ({ component: Component, path, loggedIn, exact }) => (

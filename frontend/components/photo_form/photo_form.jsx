@@ -53,7 +53,6 @@ class PhotoForm extends React.Component {
 
   render() {
     const disabled = (this.state.photoFile == null || this.state.title == "")
-    console.log(this)
     return (
       <div>
         <form

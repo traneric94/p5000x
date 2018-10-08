@@ -55,7 +55,6 @@ class PhotosItem extends React.Component {
   }
 
   handleDelete() {
-    console.log(this.props.photo)
     this.props.deletePhoto(this.props.photo.id);
     this.closeModal();
   }

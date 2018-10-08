@@ -16,7 +16,6 @@ class OwnProfileEdit extends React.Component {
         if (this.state.profilePicture) {
             formData.append('user[image]', this.state.profilePicture);
         }
-        console.log(this, "hi")
         this.props.updateUser(formData);
     }
 

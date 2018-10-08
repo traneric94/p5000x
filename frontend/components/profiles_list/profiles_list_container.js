@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/user_actions';
-import Profiles from './profiles';
-import { getOtherUsers, getFollowedUsers } from '../../reducers/selectors';
+import Profiles from './profiles_list';
+import { getOtherUsers } from '../../reducers/selectors';
 
 const msp = state => {
   return {
@@ -9,7 +9,6 @@ const msp = state => {
     users: Object.values(state.entities.users),
     otherUsers: getOtherUsers(state),
     loading: state.ui.loading.indexLoading,
-    followedUsers: getFollowedUsers(state)
   };
 }
 

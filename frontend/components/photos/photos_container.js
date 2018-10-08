@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     otherPhotos: getOtherPhotos(state),
-    ownPhotos: getOwnPhotos(state),
+    ownPhotos: getOwnPhotos(state, ownProps.userId),
     errors: state.errors,
     loading: state.ui.loading.indexLoading
 
