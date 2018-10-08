@@ -5,7 +5,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import PhotosContainer from './photos/photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import ProfileContainer from './profiles/profile_container';
+import ProfilesListContainer from './profiles_list/profiles_list_container';
 import OwnProfileContainer from './own_profile/own_profile_container';
 import SplashContainer from './splash/splash_container';
 
@@ -24,7 +24,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute exact path="/feed" component={PhotosContainer} />
-      <ProtectedRoute path="/users" component={ProfileContainer} />
+      <ProtectedRoute path="/users" component={ProfilesListContainer} />
       <ProtectedRoute path="/:username" component={OwnProfileContainer} />
     </Switch>
   </div>

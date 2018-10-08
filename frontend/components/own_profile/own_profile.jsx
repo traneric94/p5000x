@@ -5,13 +5,17 @@ import PhotosContainer from '../photos/photos_container';
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.renderEdit.bind(this);
   }
 
-  componentDidMount() {
+  renderEdit() {
+    const {user, currentUser} = this.props
+    if (user.id === currentUser.id) {
+      
+    }
   }
   
   render() {
-    console.log("this", this)
     if (this.props.user === undefined) return null;
     const {
       id,

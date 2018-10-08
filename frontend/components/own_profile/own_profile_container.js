@@ -8,7 +8,6 @@ import { getMappedUser } from '../../reducers/selectors';
 const msp = (state, ownProps) => {
 
   const username = ownProps.location.pathname.slice(1);
-  console.log("state", state);
   return {
     currentUser: state.session.currentUser,
     user: getMappedUser(state, username)
