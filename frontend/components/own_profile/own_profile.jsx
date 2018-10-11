@@ -1,22 +1,20 @@
 import React from 'react';
 import PhotosContainer from '../photos/photos_container';
-// import OwnProfileEdit from './own_profile_edit';
 
 class OwnProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.renderEdit.bind(this);
   }
 
-  renderEdit() {
-    const {user, currentUser} = this.props
-    if (user.id === currentUser.id) {
-      
-    }
+  componentDidMount() {
+    this.props.fetchUsers()
   }
-  
+
   render() {
-    if (this.props.user === undefined) return null;
+    console.log(this)
+    if (this.props.user === undefined) {
+      return null;
+    }
     const {
       id,
       username,

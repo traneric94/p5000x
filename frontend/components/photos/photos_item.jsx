@@ -6,6 +6,8 @@ const customStyles = {
   content : {
 
     'margin' : 'auto',
+    'overflow' : 'auto',
+    'border-radius' : '2%'
   }
 };
 
@@ -89,9 +91,7 @@ class PhotosItem extends React.Component {
         </div>
       ) : (
           <div className="show">
-            <div className="open-pic">
-              <img src={this.props.photo.photoUrl} />
-            </div>
+            <img className="open-pic" src={this.props.photo.photoUrl} />
             <div className="details">
               <h1 ref={subtitle => this.subtitle = subtitle}>
                 {this.props.photo.title} </h1>

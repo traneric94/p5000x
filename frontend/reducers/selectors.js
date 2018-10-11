@@ -1,4 +1,6 @@
 export const getUserPhotos = ({ entities }, userId) => {
+    console.log(userId)
+    console.log(entities)
     let result = Object.values(entities.photos).filter(
       (photo) => {
         return photo.author_id == userId;

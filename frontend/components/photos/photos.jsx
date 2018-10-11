@@ -5,19 +5,16 @@ import LoadingIcon from '../loading/loading_icon';
 class Photos extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
-    const { getOwnPhotos, currentUser } = this.props
-    getOwnPhotos(currentUser.id)
-
+    const { getOwnPhotos, id } = this.props
+    getOwnPhotos(id)
   }
 
 
   renderPhotos() {
     const { photos, deletePhoto, currentUser } = this.props
-    if (this.props.currentUser == null) return null;
     return (
         <div className="photos-container">
           {
