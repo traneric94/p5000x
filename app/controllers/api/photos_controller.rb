@@ -1,10 +1,8 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    p "HELLO"
-    @photos = Photo.all.page(params[:page]).per(10)
-    p @photos
-    p "HI"
+    p "INDEX"
+    @photos = Photo.all
   end
 
   def create
@@ -41,6 +39,12 @@ class Api::PhotosController < ApplicationController
 
   def feed
     @photos = Photo.all.page(params[:page]).per(10)
+    render :index
+  end
+
+  def by_user
+    @photos = Photo.where(author_id: params[:id])
+    render :index
   end
 
   private

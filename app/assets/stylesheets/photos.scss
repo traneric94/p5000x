@@ -23,13 +23,15 @@
 }
 
 .open-pic img {
-  max-width: 500px;
-  max-height: 500px;
+  margin-top: auto;
+  max-width: 1000px;
+  max-height: 1000px;
+  object-fit: contain;
 
 }
 
 .details {
-  margin: 50px;
+  margin: 100px;
   text-align: center;
   align-self: center;
 }

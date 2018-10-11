@@ -22,6 +22,7 @@ class PhotosItem extends React.Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.renderButton = this.renderButton.bind(this);
+    this.renderDisplay = this.renderDisplay.bind(this);
   }
 
   openModal() {
@@ -76,26 +77,33 @@ class PhotosItem extends React.Component {
     }
   }
 
-  render() {
-    let display = this.state.visible ? (
-      <div>
-        <PhotoEditContainer 
-        photo={this.props.photo} 
-        closeModal={this.closeModal}
-        />
-        {this.renderButton()}</div>
-    ) : (
-      <div className="show">
-        <div className="open-pic">
-          <img src={this.props.photo.photoUrl}/></div>
-        <div className="details">
-          <h1 ref={subtitle => this.subtitle = subtitle}>
-            {this.props.photo.title} </h1>
-          <h2>{this.props.photo.description}</h2>
+  renderDisplay() {
+    return (
+      this.state.visible ? (
+        <div>
+          <PhotoEditContainer
+            photo={this.props.photo}
+            closeModal={this.closeModal}
+          />
           {this.renderButton()}
         </div>
-      </div>
+      ) : (
+          <div className="show">
+            <div className="open-pic">
+              <img src={this.props.photo.photoUrl} />
+            </div>
+            <div className="details">
+              <h1 ref={subtitle => this.subtitle = subtitle}>
+                {this.props.photo.title} </h1>
+              <h2>{this.props.photo.description}</h2>
+              {this.renderButton()}
+            </div>
+          </div>
+        )
     );
+  }
+
+  render() {
     return (
       <div>
         <img
@@ -108,7 +116,7 @@ class PhotosItem extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           ariaHideApp={false} >
-          {display}
+          {this.renderDisplay()}
         </Modal>
       </div>
     )

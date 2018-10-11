@@ -10,8 +10,6 @@ const receivePhoto = photo => ({ type: RECEIVE_PHOTO, photo });
 const removePhoto = (id) => ({ type: REMOVE_PHOTO, id })
 const receiveErrors = errors => ({ type: RECEIVE_PHOTO_ERRORS, errors });
 
-
-
 export const getPhotos = (page) => dispatch => {
   dispatch(Loading.startLoading());
   
@@ -31,6 +29,17 @@ export const getPhoto = (id) => dispatch => (
       dispatch(receiveErrors(err.responseJSON))
     )
 );
+
+export const getOwnPhotos = (id) => dispatch => {
+  dispatch(Loading.startLoading());
+
+  return PhotoAPIUtil.getUserPhotos(id).then(
+    photo => dispatch(receivePhotos(photo))
+  ),
+  err => (
+    dispatch(receiveErrors(err.responseJSON))
+  )
+};
 
 export const createPhoto = (photo) => dispatch => (
   PhotoAPIUtil.createPhoto(photo).then(

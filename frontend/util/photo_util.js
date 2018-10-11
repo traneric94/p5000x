@@ -1,41 +1,41 @@
-export const getPhotos = (page) => (
+export const getPhotos = (page) => 
   $.ajax({
     method: 'GET',
-    url: `/api/photos`,
-    data: { page } 
-  })
-);
+    url: `/api/feed/${page}`
+  });
 
-export const getPhoto = (id) => (
+export const getPhoto = (id) => 
   $.ajax({
     method: 'GET',
     url: `/api/photos/${id}`
-  })
-);
+  });
 
-export const createPhoto = (data) => (
+export const getUserPhotos = id =>
+  $.ajax({
+    method: "GET",
+    url: `/api/userpics/${id}`
+  });
+
+export const createPhoto = (data) => 
   $.ajax({
     method: 'POST',
     url: 'api/photos',
     data: data,
     contentType: false,
     processData: false
-  })
-)
+  });
 
-export const updatePhoto = (data, id) => (
+export const updatePhoto = (data, id) => 
   $.ajax({
     method: 'PATCH',
     url: `/api/photos/${id}`,
     data: data,
     contentType: false,
     processData: false,
-  })
-);
+  });
 
-export const deletePhoto = (id) => (
+export const deletePhoto = (id) => 
   $.ajax({
     method: 'DELETE',
     url: `/api/photos/${id}`
-  })
-);
+  });
