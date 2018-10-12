@@ -105,7 +105,7 @@ class PhotosItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="default-pic-container">
         <img
           className="default-pic"
           src={this.props.photo.photoUrl}

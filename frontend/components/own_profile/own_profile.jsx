@@ -11,7 +11,6 @@ class OwnProfile extends React.Component {
   }
 
   render() {
-    console.log(this)
     if (this.props.user === undefined) {
       return null;
     }

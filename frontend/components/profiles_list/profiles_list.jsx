@@ -18,7 +18,7 @@ class Profiles extends React.Component {
     return (
       <div className="photos-container">
         {
-          this.props.otherUsers.map((user, idx) => {
+          this.props.users.map((user, idx) => {
             return (
               <ProfileItem
                 key={idx}

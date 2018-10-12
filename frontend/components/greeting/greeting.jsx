@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const newSessionLinks = ({currentUser, ownProps, clearErrors}) => {
+const newSessionLinks = ({currentUser, ownProps}) => {
   const path = ownProps.location.pathname.slice(1);
   if (!currentUser) {
     if (path === "signup") {
@@ -28,7 +28,8 @@ const newSessionLinks = ({currentUser, ownProps, clearErrors}) => {
   
 };
 
-const greeting = ({currentUser, logOut, ownProps, openModal}) => {
+const greeting = ({currentUser, logOut, openModal, ownProps}) => {
+  console.log("ownProps?", ownProps)
   return (
     <div className="nav-right">
       <hgroup className="dropdown">
