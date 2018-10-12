@@ -29,7 +29,6 @@ const newSessionLinks = ({currentUser, ownProps}) => {
 };
 
 const greeting = ({currentUser, logOut, openModal, ownProps}) => {
-  console.log("ownProps?", ownProps)
   return (
     <div className="nav-right">
       <hgroup className="dropdown">

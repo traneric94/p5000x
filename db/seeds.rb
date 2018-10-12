@@ -399,9 +399,10 @@ photo66 = Photo.new(
   description: "not the same as in Japan",
   author_id: user0.id
 )
+
 photo67 = Photo.new(
-  title: "Morning Breakfast",
-  description: "stuffed from the eggs",
+  title: "Clean Sandwich",
+  description: "always add avocado",
   author_id: user7.id
 )
 photo68 = Photo.new(
@@ -600,8 +601,8 @@ photo106 = Photo.new(
   author_id: user0.id
 )
 photo107 = Photo.new(
-  title: "Clean Sandwich",
-  description: "always add avocado",
+  title: "Morning Breakfast",
+  description: "stuffed from the eggs",
   author_id: user7.id
 )
 photo108 = Photo.new(
@@ -799,7 +800,7 @@ photo63.image.attach(io: File.open("./app/assets/images/seedpics/dog4.jpg"), fil
 photo64.image.attach(io: File.open("./app/assets/images/seedpics/fitness4.jpg"), filename: "fitness4.jpg")
 photo65.image.attach(io: File.open("./app/assets/images/seedpics/foodie4.jpg"), filename: "foodie4.jpg")
 photo66.image.attach(io: File.open("./app/assets/images/seedpics/hawaii4.jpg"), filename: "hawaii4.jpg")
-photo67.image.attach(io: File.open("./app/assets/images/seedpics/healthy4.jpg"), filename: "healthy4.jpg")
+photo107.image.attach(io: File.open("./app/assets/images/seedpics/healthy4.jpg"), filename: "healthy4.jpg")
 photo68.image.attach(io: File.open("./app/assets/images/seedpics/LA4.jpg"), filename: "LA4.jpg")
 photo69.image.attach(io: File.open("./app/assets/images/seedpics/meme4.jpg"), filename: "meme4.jpg")
 photo70.image.attach(io: File.open("./app/assets/images/seedpics/concert4.jpg"), filename: "concert4.jpg")
@@ -839,7 +840,7 @@ photo103.image.attach(io: File.open("./app/assets/images/seedpics/dog6.jpg"), fi
 photo104.image.attach(io: File.open("./app/assets/images/seedpics/fitness6.jpg"), filename: "fitness6.jpg")
 photo105.image.attach(io: File.open("./app/assets/images/seedpics/foodie6.jpg"), filename: "foodie6.jpg")
 photo106.image.attach(io: File.open("./app/assets/images/seedpics/hawaii6.jpg"), filename: "hawaii6.jpg")
-photo107.image.attach(io: File.open("./app/assets/images/seedpics/healthy6.jpg"), filename: "healthy6.jpg")
+photo67.image.attach(io: File.open("./app/assets/images/seedpics/healthy6.jpg"), filename: "healthy6.jpg")
 photo108.image.attach(io: File.open("./app/assets/images/seedpics/LA6.jpg"), filename: "LA6.jpg")
 photo109.image.attach(io: File.open("./app/assets/images/seedpics/meme6.jpg"), filename: "meme6.jpg")
 photo110.image.attach(io: File.open("./app/assets/images/seedpics/concert6.jpg"), filename: "concert6.jpg")
