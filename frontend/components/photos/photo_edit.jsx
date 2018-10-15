@@ -53,20 +53,20 @@ class PhotoEdit extends React.Component {
   render() {
     const disabled = (this.state.title == "")
     return (
-      <div>
+      <div className="edit">
         <form
-          className="upload-form-container"
+          className="edit-form-container"
           onSubmit={this.handleSubmit.bind(this)}
         >
-        <div className="upload-photo">
-          <label className="action-button"> Select Photo
+        <div className="edit-photo">
+          <label className="action-button"> Select New Photo
             <input type="file"
              onChange={this.handleFile.bind(this)} />
           </label>
           <br/><br/>
-          <img className="preview-pic" src={this.state.preview}/>
+          <img className="edit-preview-pic" src={this.state.preview}/>
         </div>
-          <div className="input-details">
+          <div className="edit-details">
             <label> Title
               <br/>
               <input

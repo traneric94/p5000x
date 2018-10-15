@@ -1,0 +1,50 @@
+.photo-edit-container {
+    width:100%;
+    height:100%;
+
+    .edit {
+        width: inherit;
+        height: inherit;
+    
+
+        .edit-form-container {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            margin-top: 11vh;
+            margin-left: 8vw;
+
+            .edit-photo {
+                position: absolute;
+                margin: auto;   
+                display: inline-block;
+                object-fit: contain;
+                height: 65vh;
+                width: 45vw;
+
+                .edit-preview-pic {
+                    position: absolute;
+                    max-height: 55vh;
+                    max-width: 55vw;
+                    margin: auto;
+                }
+            }
+            .edit-details {
+                position: absolute;
+                margin-left: 47vw;
+                width: 35vw;
+                text-align: center;
+                label input {
+                    height: 20px;
+                }
+        
+            }
+        }
+    }
+}
+
+.editing {
+    position: absolute;
+    margin-top: -20vh;
+    margin-left: 67vw;
+}

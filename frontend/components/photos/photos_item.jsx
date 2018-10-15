@@ -66,7 +66,7 @@ class PhotosItem extends React.Component {
     console.log(this.props);
     if (this.props.currentUser.id === this.props.photo.author_id) {
       return (
-        <div className="form-buttons">
+        <div className={this.state.visible ? "editing" : "form-buttons"}>
           {this.toggleEditCancel()}
           <button
             className="action-button"
@@ -83,7 +83,7 @@ class PhotosItem extends React.Component {
   renderDisplay() {
     return (
       this.state.visible ? (
-        <div>
+        <div className="photo-edit-container">
           <PhotoEditContainer
             photo={this.props.photo}
             closeModal={this.closeModal}
