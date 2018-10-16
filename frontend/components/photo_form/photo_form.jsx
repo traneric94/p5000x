@@ -9,8 +9,6 @@ class PhotoForm extends React.Component {
       preview: null,
       description: "",
     }
-
-    this.preview = null;
   }
 
   handleSubmit() {
@@ -30,7 +28,7 @@ class PhotoForm extends React.Component {
   }
 
   handleFile(e) {
-    this.preview = URL.createObjectURL(e.currentTarget.files[0])
+    this.setState({ preview: URL.createObjectURL(e.currentTarget.files[0])})
     this.setState({ photoFile: e.currentTarget.files[0] })
   }
 
@@ -45,13 +43,12 @@ class PhotoForm extends React.Component {
         </ul>
       );
     } else {
-      return (
-        <div></div>
-      );
+      return (null);
     }
   }
 
   render() {
+
     const disabled = (this.state.photoFile == null || this.state.title == "")
     return (
       <div>
@@ -65,7 +62,7 @@ class PhotoForm extends React.Component {
              onChange={this.handleFile.bind(this)} />
           </label>
           <br/><br/>
-          <img className="preview-pic" src={this.preview}/>
+          <img className="preview-pic" src={this.state.preview}/>
         </div>
         {this.renderErrors()}
           <div className="input-details">

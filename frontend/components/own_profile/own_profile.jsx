@@ -42,7 +42,7 @@ class OwnProfile extends React.Component {
               </li>
             </ul>
           </div>
-          <h1 className='center'> Your Photos </h1>
+          <h1 className='center'> {id == this.props.currentUser.id ? "Your Photos" : `${username}'s Photos`} </h1>
           <PhotosContainer userId={id} />
         </div>
     );

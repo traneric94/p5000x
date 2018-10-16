@@ -6,8 +6,8 @@ const customStyles = {
   content : {
 
     'margin' : 'auto',
-    'overflow' : 'auto',
-    'border-radius' : '2%'
+    'overflow' : 'auto'
+    
   }
 };
 
