@@ -1,7 +1,6 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    p "INDEX"
     @photos = Photo.all
   end
 

@@ -18,7 +18,7 @@ class PhotoFeed extends React.Component {
 
     getMorePhotos() {
         this.props.getPhotos(this.state.page);
-        this.setState({ page: this.state.page + 1 })
+        this.setState({ page: this.state.page + 2 })
     }
 
     renderPhotos() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const newSessionLinks = ({currentUser, ownProps}) => {
   const path = ownProps.location.pathname.slice(1);
@@ -23,6 +23,8 @@ const newSessionLinks = ({currentUser, ownProps}) => {
           <Link className="button-primary" to="/signup">Sign Up</Link>
         </nav>
       )
+    } else {
+      return <Redirect to="/" />
     }
   }
   
@@ -53,4 +55,5 @@ const greeting = ({currentUser, logOut, openModal, ownProps}) => {
 const Greeting = (state) => {
   return state.currentUser ? greeting(state) : newSessionLinks(state)
 };
+
 export default Greeting;

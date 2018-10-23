@@ -110,7 +110,9 @@ class PhotosItem extends React.Component {
         <img
           className="default-pic"
           src={this.props.photo.photoUrl}
-          onClick={this.openModal} />
+          onClick={this.openModal} 
+          title={this.props.photo.title}
+        />
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
