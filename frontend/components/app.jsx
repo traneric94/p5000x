@@ -13,9 +13,7 @@ const App = () => (
   <div>
     <Modal />
     <div className="nav-bar">
-      <Link to="/feed">
         <img id="logo" src={window.logo} />
-      </Link>
       <GreetingContainer />
     </div>
 
