@@ -310,14 +310,9 @@ photo48 = Photo.new(
   author_id: user8.id
 )
 photo49 = Photo.new(
-  title: "Precious Creatures",
+  title: "Precious Creatures",  
   description: "i love cows",
   author_id: user9.id
-)
-photo50 = Photo.new(
-  title: "Light Up",
-  description: "Unforgettable",
-  author_id: user10.id
 )
 photo51 = Photo.new(
   title: "Geometric Lights",
@@ -783,7 +778,6 @@ photo46.image.attach(io: File.open("./app/assets/images/seedpics/hawaii3.jpg"), 
 photo47.image.attach(io: File.open("./app/assets/images/seedpics/healthy3.jpg"), filename: "healthy3.jpg")
 photo48.image.attach(io: File.open("./app/assets/images/seedpics/LA3.jpg"), filename: "LA3.jpg")
 photo49.image.attach(io: File.open("./app/assets/images/seedpics/meme3.jpg"), filename: "meme3.jpg")
-photo50.image.attach(io: File.open("./app/assets/images/seedpics/concert3.jpg"), filename: "concert3.jpg")
 photo51.image.attach(io: File.open("./app/assets/images/seedpics/festival3.jpg"), filename: "festival3.jpg")
 photo52.image.attach(io: File.open("./app/assets/images/seedpics/park3.jpg"), filename: "park3.jpg")
 photo53.image.attach(io: File.open("./app/assets/images/seedpics/wild3.jpg"), filename: "wild3.jpg")
@@ -918,7 +912,6 @@ photo46.save!
 photo47.save!
 photo48.save!
 photo49.save!
-photo50.save!
 photo51.save!
 photo52.save!
 photo53.save!

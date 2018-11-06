@@ -16,6 +16,9 @@ input {
 }
 
 .action-button {
+  position: relative;
+  margin-top: 25px;
+  margin-left: 15px;
   border: 1px solid;
   padding: 6px 12px;
   cursor: pointer;
@@ -37,6 +40,7 @@ input {
 
 #main-upload {
   height: 60px;
+  margin-bottom: 40px;
 }
 
 #main-upload[disabled] {

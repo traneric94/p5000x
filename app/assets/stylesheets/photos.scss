@@ -76,7 +76,7 @@
 }
 
 .show {
-  max-height: 850px;
+  max-height: 650px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -91,8 +91,8 @@
   .open-pic {
     margin: 0;
     top: 50%;
-    max-width: 1000px;
-    max-height: 1000px;
+    max-width: 650px;
+    max-height: 650px;
     overflow: none;
     object-fit: contain;
 
@@ -123,9 +123,11 @@
   float: right;
   margin-top: 10px;
 }
+
 .action-buttons:active:focus {
   outline:none;
 }
+
 .action-buttons:focus {
   outline: none;
 }
@@ -179,4 +181,8 @@ textarea {
   margin: 40px;
   border-radius: 20px;
   padding-left: 20px;
+}
+
+#button-close {
+  background-color: red;
 }

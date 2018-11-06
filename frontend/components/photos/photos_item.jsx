@@ -6,7 +6,11 @@ const customStyles = {
   content : {
 
     'margin' : 'auto',
-    'overflow' : 'auto'
+    'overflow' : 'hidden',
+    'top' : '10px',
+    'left' : '10px',
+    'bottom' : '10px',
+    'right' : '10px',
     
   }
 };
@@ -33,9 +37,11 @@ class PhotosItem extends React.Component {
 
   afterOpenModal() {
     this.subtitle.style.color = '#foo';
+    document.body.style.overflow = "hidden";
   }
 
   closeModal() {
+    document.body.style.overflow = "visible";
     this.setState({ modalIsOpen: false })
     this.setState({ visible: false })
   }
@@ -84,6 +90,7 @@ class PhotosItem extends React.Component {
     return (
       this.state.visible ? (
         <div className="photo-edit-container">
+          <button id="button-close" className="action-button" onClick={this.closeModal}> X </button>
           <PhotoEditContainer
             photo={this.props.photo}
             closeModal={this.closeModal}
@@ -92,6 +99,7 @@ class PhotosItem extends React.Component {
         </div>
       ) : (
           <div className="show">
+            <button id="button-close" className="action-button" onClick={this.closeModal}> X </button>
             <img className="open-pic" src={this.props.photo.photoUrl} />
             <div className="details">
               <h1 ref={subtitle => this.subtitle = subtitle}>
