@@ -65,7 +65,6 @@ class PhotosItem extends React.Component {
   }
 
   renderButton() {
-    console.log(this.props);
     if (this.props.currentUser.id === this.props.photo.author_id) {
       return (
         <div className={this.state.visible ? "editing" : "form-buttons"}>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logOut, removeSessionErrors } from '../../actions/session_actions';
-import Greeting from './greeting';
+import Navbar from './navbar';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 
@@ -17,4 +17,4 @@ const mdp = dispatch => ({
   clearErrors: () => dispatch(removeSessionErrors())
 });
 
-export default withRouter(connect(msp, mdp)(Greeting));
+export default withRouter(connect(msp, mdp)(Navbar));

@@ -29,7 +29,6 @@ class PhotoFeed extends React.Component {
         for (let i = 0; i < photoArray.length - 2; i+=3) {
             rows.push([photoArray[i], photoArray[i+1], photoArray[i+2]]);
         }
-        console.log("rows", rows);
 
         return (
             <div className="photos-container-new">

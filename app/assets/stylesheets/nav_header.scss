@@ -61,19 +61,12 @@
   -webkit-padding-start: 0px;
 }
 
-// .nav-header-dropdown li button {
-//   width: 100%;
-//   text-align: center;
-//   border: 0px;
-//   text-align: left;
-//   color: rgb(81, 85, 88);
-// }
-
 .dropdown:hover .nav-header-dropdown {
   display: block;
   position: absolute;
   right: 1px;
   padding: 0px;
+  z-index: 10;
 
 }
 
