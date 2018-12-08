@@ -3,14 +3,14 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PhotoFormContainer from '../photo_form/photo_form_container';
 
-function Modal({modal, closeModal}) {
+function Modal ({modal, closeModal}, id) {
   if (!modal) {
     return null;
   }
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={(e) => e.stopPropagation()}>
-        <PhotoFormContainer closeModal={closeModal} />
+        <PhotoFormContainer operation={modal} closeModal={closeModal} />
       </div>
     </div>
   )

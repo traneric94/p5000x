@@ -8,6 +8,8 @@ import ProfilesListContainer from './profiles_list/profiles_list_container';
 import OwnProfileContainer from './own_profile/own_profile_container';
 import SplashContainer from './splash/splash_container';
 import PhotoFeedContainer from './photo_feed/photo_feed_container';
+import PhotoTestContainer from './photos_test/photos_container';
+
 const App = () => (
   <div>
     <Modal />
@@ -24,7 +26,8 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute exact path="/feed" component={PhotoFeedContainer} />
       <ProtectedRoute path="/users" component={ProfilesListContainer} />
-      <ProtectedRoute path="/:username" component={OwnProfileContainer} />
+      <ProtectedRoute exact path="/:username" component={OwnProfileContainer} />
+      <ProtectedRoute path="/photo/:photo_id" component={PhotoTestContainer} />
     </Switch>
   </div>
 );

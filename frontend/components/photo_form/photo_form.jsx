@@ -3,23 +3,40 @@ import React from 'react';
 class PhotoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    console.log("thisform", this)
+    this.state = this.props.operation == 'create' ? ({
       title: "",
       photoFile: null,
       preview: null,
       description: "",
-    }
+      editing: false
+    }) : ({ 
+      title: this.props.photo.title,
+      photoFile: null,
+      preview: this.props.photo.photoUrl,
+      description: this.props.photo.description,
+      id: this.props.photo.id,
+      editing: true
+    })
   }
 
   handleSubmit() {
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
-    formData.append('photo[author_id]', this.props.currentUser.id);
+
     if (this.state.photoFile) {
       formData.append('photo[image]', this.state.photoFile);
     }
-    this.props.createPhoto(formData);
+
+    if (this.state.editing) {
+      formData.append('photo[id]', this.state.id);
+      this.props.updatePhoto(formData);
+    } else {
+      formData.append('photo[author_id]', this.props.currentUser.id);
+      this.props.createPhoto(formData);
+    }
+
     this.props.closeModal();
   }
 
@@ -34,7 +51,8 @@ class PhotoForm extends React.Component {
 
   renderErrors() {
 
-    if (this.props.errors.photoErrors && this.props.errors.photoErrors.length != 0) {
+    if (this.props.errors.photoErrors && 
+      this.props.errors.photoErrors.length != 0) {
       return (
         <ul className="error-list">
           {this.props.errors.photoErrors.map((err, idx) => (
@@ -47,9 +65,25 @@ class PhotoForm extends React.Component {
     }
   }
 
-  render() {
+  renderDelete() {
+    if (this.state.editing) {
+      return (
+        <button
+          id="delete"
+          className="action-button"
+          value="Delete Photo"
+        > Delete Photo </button> 
+      )
+    };
+    return null;
+  }
 
-    const disabled = (this.state.photoFile == null || this.state.title == "")
+
+
+  render() {
+    console.log(this.state)
+
+    const disabled = (!this.state.editing && this.state.photoFile == null || this.state.title == "")
     return (
       <div>
         <form
@@ -63,6 +97,8 @@ class PhotoForm extends React.Component {
           </label>
           <br/><br/>
           <img className="preview-pic" src={this.state.preview}/>
+          {this.renderDelete()}
+
         </div>
         {this.renderErrors()}
           <div className="input-details">
@@ -87,7 +123,7 @@ class PhotoForm extends React.Component {
               id="main-upload"
               className="upload button-primary"
               type="submit"
-              value="Upload Photo"
+              value={this.state.editing ? "Update Photo" : "Upload Photo"}
               disabled={(disabled) ? "disabled" : ""}
               />
           </div>

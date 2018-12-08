@@ -1,0 +1,91 @@
+@media (min-width: 801px) {
+    .photo-show-container {
+        height: 90vh;
+        align-items: center;
+        display: flex;
+        .photo-show {
+            max-width: 60%;
+            max-height: 90vh;
+            float: left;
+            top: 10px;
+            margin: auto;
+            padding-top: 1vh;
+        }
+        .photo-text {
+            display: flex;
+            float: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .edit-button {
+            position: absolute;
+            top: 11.5vh;
+            right: 2vw;
+            height: 35px;
+            transition: 1s;
+        }
+
+    }
+}
+
+@media (max-width: 800px) {
+    .photo-show-container {
+        background-color: black;
+        height: 80vh;
+        text-align: center;
+        transition: 1s;
+        &:hover {
+            background-color: rgb(30,30,30);
+            .edit-button, .photo-text {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        // &:hover .photo-text{
+        //     visibility: visible;
+        //     opacity: 1;
+        // }
+
+    .photo-show {
+
+        max-width: 100%;
+        max-height: 75vh;
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        top: 50%;
+        position: relative;
+        transform: translateY(-50%);
+        object-fit: contain;
+    }
+
+    .photo-text {
+        color: white;
+        text-shadow:
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 23px;
+        width: 20em;
+        visibility: hidden;
+        opacity: 0;  
+        transition: 1s;
+    }
+
+    .edit-button {
+        position: absolute;
+        top: 11.5vh;
+        right: 2vw;
+        height: 35px;
+        visibility: hidden;
+        opacity: 0;  
+        transition: 1s;
+    }
+    }
+}

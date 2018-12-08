@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PhotoEditContainer from './photo_edit_container'
+import PhotoEditContainer from './photo_edit_container';
+import { Link } from 'react-router-dom';
 
 const customStyles = {
   content : {
@@ -110,20 +111,13 @@ class PhotosItem extends React.Component {
   render() {
     return (
       <div className="default-pic-container">
+      <Link to={`photo/${this.props.photo.id}`}>
         <img
           className="default-pic"
           src={this.props.photo.photoUrl}
-          onClick={this.openModal} 
           title={this.props.photo.title}
         />
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          ariaHideApp={false} >
-          {this.renderDisplay()}
-        </Modal>
+        </Link>
       </div>
     )
   }

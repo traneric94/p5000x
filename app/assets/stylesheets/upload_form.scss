@@ -18,7 +18,6 @@ input {
 .action-button {
   position: relative;
   margin-top: 25px;
-  margin-left: 15px;
   border: 1px solid;
   padding: 6px 12px;
   cursor: pointer;
@@ -45,4 +44,10 @@ input {
 
 #main-upload[disabled] {
   background-color: #DCDAD1
+}
+
+#delete {
+  color: white;
+  background-color: red;
+
 }
