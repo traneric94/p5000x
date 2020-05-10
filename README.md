@@ -15,15 +15,6 @@
 
 ![Home Feed](https://github.com/traneric94/p5000x/blob/master/app/assets/images/home%20feed.png)
 
-### Modal Photo View
-
-![Photo View](https://github.com/traneric94/p5000x/blob/master/app/assets/images/show.png)
-
-### Modal Photo Edit
-
-![Photo Edit](https://github.com/traneric94/p5000x/blob/master/app/assets/images/edit.png)
-
-
 ## Technologies
 
 5000px utilizes a Rails/PostgreSQL backend and React.js/Redux frontend. Rails serves as the framework mainly due to the small time-frame allowed for this project, as it prioritizes convenience at the irrelevant cost of scalability.
