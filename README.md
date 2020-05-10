@@ -2,9 +2,6 @@
 
 5000px is an image sharing site inspired by [500px](https://500px.com/).
 
-### [Live Demo](https://p5000x.herokuapp.com/#/)
-
-
 ## Features
 
 + Secure frontend and backend user authentication using BCrypt.
